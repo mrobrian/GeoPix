@@ -14,13 +14,20 @@
 		FF7A4086191E90B800289B20 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7A4085191E90B800289B20 /* main.m */; };
 		FF7A408A191E90B800289B20 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7A4089191E90B800289B20 /* AppDelegate.m */; };
 		FF7A408D191E90B800289B20 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF7A408B191E90B800289B20 /* Main.storyboard */; };
-		FF7A4090191E90B800289B20 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7A408F191E90B800289B20 /* ViewController.m */; };
 		FF7A4092191E90B800289B20 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF7A4091191E90B800289B20 /* Images.xcassets */; };
 		FF7A4099191E90B800289B20 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF7A4098191E90B800289B20 /* XCTest.framework */; };
 		FF7A409A191E90B800289B20 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF7A4079191E90B800289B20 /* Foundation.framework */; };
 		FF7A409B191E90B800289B20 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF7A407D191E90B800289B20 /* UIKit.framework */; };
 		FF7A40A3191E90B800289B20 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FF7A40A1191E90B800289B20 /* InfoPlist.strings */; };
 		FF7A40A5191E90B800289B20 /* GeoPixTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7A40A4191E90B800289B20 /* GeoPixTests.m */; };
+		FF7A40B3191E927300289B20 /* FlickrAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7A40B1191E927300289B20 /* FlickrAPI.m */; };
+		FF7A40B5191E92DD00289B20 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF7A40B4191E92DD00289B20 /* CoreLocation.framework */; };
+		FF7A40B8191E98BB00289B20 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7A40B7191E98BB00289B20 /* HomeViewController.m */; };
+		FF7A40BA191ED72900289B20 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF7A40B9191ED72900289B20 /* GameKit.framework */; };
+		FF7A40BC191ED73200289B20 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF7A40BB191ED73200289B20 /* iAd.framework */; };
+		FF7A40BF191ED7DA00289B20 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7A40BE191ED7DA00289B20 /* SettingsViewController.m */; };
+		FF7A40C1191EE46700289B20 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF7A40C0191EE46700289B20 /* MapKit.framework */; };
+		FF7A40C7191EE90C00289B20 /* GameKitHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7A40C6191EE90C00289B20 /* GameKitHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,14 +52,25 @@
 		FF7A4088191E90B800289B20 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FF7A4089191E90B800289B20 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		FF7A408C191E90B800289B20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		FF7A408E191E90B800289B20 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		FF7A408F191E90B800289B20 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		FF7A4091191E90B800289B20 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		FF7A4097191E90B800289B20 /* GeoPixTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GeoPixTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF7A4098191E90B800289B20 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		FF7A40A0191E90B800289B20 /* GeoPixTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GeoPixTests-Info.plist"; sourceTree = "<group>"; };
 		FF7A40A2191E90B800289B20 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FF7A40A4191E90B800289B20 /* GeoPixTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GeoPixTests.m; sourceTree = "<group>"; };
+		FF7A40B0191E927300289B20 /* FlickrAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrAPI.h; sourceTree = "<group>"; };
+		FF7A40B1191E927300289B20 /* FlickrAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrAPI.m; sourceTree = "<group>"; };
+		FF7A40B2191E927300289B20 /* FlickrAPIDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrAPIDelegate.h; sourceTree = "<group>"; };
+		FF7A40B4191E92DD00289B20 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		FF7A40B6191E98BB00289B20 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		FF7A40B7191E98BB00289B20 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		FF7A40B9191ED72900289B20 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		FF7A40BB191ED73200289B20 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
+		FF7A40BD191ED7DA00289B20 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		FF7A40BE191ED7DA00289B20 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		FF7A40C0191EE46700289B20 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		FF7A40C5191EE90C00289B20 /* GameKitHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameKitHelper.h; sourceTree = "<group>"; };
+		FF7A40C6191EE90C00289B20 /* GameKitHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameKitHelper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +78,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF7A40BC191ED73200289B20 /* iAd.framework in Frameworks */,
+				FF7A40BA191ED72900289B20 /* GameKit.framework in Frameworks */,
+				FF7A40B5191E92DD00289B20 /* CoreLocation.framework in Frameworks */,
 				FF7A407C191E90B800289B20 /* CoreGraphics.framework in Frameworks */,
+				FF7A40C1191EE46700289B20 /* MapKit.framework in Frameworks */,
 				FF7A407E191E90B800289B20 /* UIKit.framework in Frameworks */,
 				FF7A407A191E90B800289B20 /* Foundation.framework in Frameworks */,
 			);
@@ -101,6 +123,10 @@
 		FF7A4078191E90B800289B20 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FF7A40C0191EE46700289B20 /* MapKit.framework */,
+				FF7A40BB191ED73200289B20 /* iAd.framework */,
+				FF7A40B9191ED72900289B20 /* GameKit.framework */,
+				FF7A40B4191E92DD00289B20 /* CoreLocation.framework */,
 				FF7A4079191E90B800289B20 /* Foundation.framework */,
 				FF7A407B191E90B800289B20 /* CoreGraphics.framework */,
 				FF7A407D191E90B800289B20 /* UIKit.framework */,
@@ -112,11 +138,12 @@
 		FF7A407F191E90B800289B20 /* GeoPix */ = {
 			isa = PBXGroup;
 			children = (
+				FF7A408B191E90B800289B20 /* Main.storyboard */,
+				FF7A40AF191E925600289B20 /* APIs */,
+				FF7A40C4191EE8D700289B20 /* Helpers */,
+				FF7A40AE191E920E00289B20 /* ViewControllers */,
 				FF7A4088191E90B800289B20 /* AppDelegate.h */,
 				FF7A4089191E90B800289B20 /* AppDelegate.m */,
-				FF7A408B191E90B800289B20 /* Main.storyboard */,
-				FF7A408E191E90B800289B20 /* ViewController.h */,
-				FF7A408F191E90B800289B20 /* ViewController.m */,
 				FF7A4091191E90B800289B20 /* Images.xcassets */,
 				FF7A4080191E90B800289B20 /* Supporting Files */,
 			);
@@ -150,6 +177,36 @@
 				FF7A40A1191E90B800289B20 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FF7A40AE191E920E00289B20 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				FF7A40B6191E98BB00289B20 /* HomeViewController.h */,
+				FF7A40B7191E98BB00289B20 /* HomeViewController.m */,
+				FF7A40BD191ED7DA00289B20 /* SettingsViewController.h */,
+				FF7A40BE191ED7DA00289B20 /* SettingsViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		FF7A40AF191E925600289B20 /* APIs */ = {
+			isa = PBXGroup;
+			children = (
+				FF7A40B0191E927300289B20 /* FlickrAPI.h */,
+				FF7A40B1191E927300289B20 /* FlickrAPI.m */,
+				FF7A40B2191E927300289B20 /* FlickrAPIDelegate.h */,
+			);
+			name = APIs;
+			sourceTree = "<group>";
+		};
+		FF7A40C4191EE8D700289B20 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				FF7A40C5191EE90C00289B20 /* GameKitHelper.h */,
+				FF7A40C6191EE90C00289B20 /* GameKitHelper.m */,
+			);
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,6 +256,14 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Devoir Software";
 				TargetAttributes = {
+					FF7A4075191E90B800289B20 = {
+						DevelopmentTeam = 477J3Z26K8;
+						SystemCapabilities = {
+							com.apple.iOS = {
+								enabled = 1;
+							};
+						};
+					};
 					FF7A4096191E90B800289B20 = {
 						TestTargetID = FF7A4075191E90B800289B20;
 					};
@@ -249,9 +314,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF7A4090191E90B800289B20 /* ViewController.m in Sources */,
+				FF7A40B3191E927300289B20 /* FlickrAPI.m in Sources */,
 				FF7A408A191E90B800289B20 /* AppDelegate.m in Sources */,
+				FF7A40C7191EE90C00289B20 /* GameKitHelper.m in Sources */,
+				FF7A40BF191ED7DA00289B20 /* SettingsViewController.m in Sources */,
 				FF7A4086191E90B800289B20 /* main.m in Sources */,
+				FF7A40B8191E98BB00289B20 /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,6 +444,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GeoPix/GeoPix-Prefix.pch";
 				INFOPLIST_FILE = "GeoPix/GeoPix-Info.plist";
@@ -389,6 +458,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GeoPix/GeoPix-Prefix.pch";
 				INFOPLIST_FILE = "GeoPix/GeoPix-Info.plist";
