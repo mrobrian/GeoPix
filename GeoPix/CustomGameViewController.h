@@ -13,5 +13,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *tagText;
 @property (weak, nonatomic) IBOutlet UISwitch *rotateSwitch;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *difficulty;
+- (IBAction)goBack:(id)sender;
 
 @end

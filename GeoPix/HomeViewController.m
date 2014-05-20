@@ -70,21 +70,11 @@
 
 // FlickrAPI
 -(void)didFinishLoading:(NSDictionary *)info {
-    NSLog(@"%@", info);
     [backgroundImages addObject:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[info objectForKey:@"url_m"]]]]];
     
     if (backgroundImages.count == 1) {
         [self showNextBackgroundImage];
         imageTimer = [NSTimer scheduledTimerWithTimeInterval:10.0 target:self selector:@selector(showNextBackgroundImage) userInfo:nil repeats:YES];
-    }
-}
-
-- (IBAction)startGame:(id)sender {
-    if ([GameKitHelper localPlayer].isAuthenticated) {
-        // Segue to game board
-    } else {
-        UIAlertView *noGK = [[UIAlertView alloc] initWithTitle:@"Game Center Required" message:@"Connecting to Game Center is required for this mode." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
-        [noGK show];
     }
 }
 

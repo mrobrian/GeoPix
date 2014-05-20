@@ -42,8 +42,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="startGame:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="vWq-X0-HOv"/>
-                                    <segue destination="apL-AX-8UL" kind="modal" id="jEb-yw-Ltx"/>
+                                    <segue destination="apL-AX-8UL" kind="modal" modalTransitionStyle="crossDissolve" id="jEb-yw-Ltx"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k7g-9j-zyL">
@@ -64,7 +63,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="gJx-0i-l8x" kind="modal" modalTransitionStyle="flipHorizontal" id="2a6-tN-ud9"/>
+                                    <segue destination="gJx-0i-l8x" kind="modal" modalTransitionStyle="crossDissolve" id="2a6-tN-ud9"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NMW-2h-JNy">
@@ -85,7 +84,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="4fB-W3-YHx" kind="modal" modalTransitionStyle="partialCurl" id="BeJ-Yw-8mn"/>
+                                    <segue destination="4fB-W3-YHx" kind="modal" modalTransitionStyle="flipHorizontal" id="BeJ-Yw-8mn"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="odc-ve-3De">
@@ -149,11 +148,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="158" y="-7"/>
         </scene>
-        <!--View Controller-->
+        <!--Map View Controller-->
         <scene sceneID="RSP-Ao-j7Y">
             <objects>
-                <viewController id="apL-AX-8UL" sceneMemberID="viewController">
+                <viewController id="apL-AX-8UL" customClass="MapViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5sU-7s-UGK"/>
                         <viewControllerLayoutGuide type="bottom" id="6W6-6t-3xb"/>
@@ -166,10 +166,28 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9DH-yP-7bI">
+                                <rect key="frame" x="20" y="518" width="70" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="Ikw-hJ-AMc"/>
+                                    <constraint firstAttribute="height" constant="24" id="y7t-2t-7Un"/>
+                                </constraints>
+                                <size key="titleShadowOffset" width="1" height="1"/>
+                                <state key="normal" title="Back" image="Back">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="goBack:" destination="apL-AX-8UL" eventType="touchUpInside" id="rRg-OT-G4E"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="6W6-6t-3xb" firstAttribute="top" secondItem="B9T-L7-aPP" secondAttribute="bottom" id="5Jw-o1-XAh"/>
+                            <constraint firstItem="6W6-6t-3xb" firstAttribute="top" secondItem="9DH-yP-7bI" secondAttribute="bottom" constant="26" id="63P-z2-O6Y"/>
+                            <constraint firstItem="9DH-yP-7bI" firstAttribute="leading" secondItem="xYI-ia-u1f" secondAttribute="leading" constant="20" id="6E8-wE-gEH"/>
                             <constraint firstItem="B9T-L7-aPP" firstAttribute="leading" secondItem="xYI-ia-u1f" secondAttribute="leading" id="SNp-wB-FTG"/>
                             <constraint firstAttribute="trailing" secondItem="B9T-L7-aPP" secondAttribute="trailing" id="hpw-ho-Z4C"/>
                             <constraint firstItem="B9T-L7-aPP" firstAttribute="top" secondItem="xYI-ia-u1f" secondAttribute="top" id="rd0-o9-Aoi"/>
@@ -194,8 +212,9 @@
                     <view key="view" contentMode="scaleToFill" id="QPW-Cv-3uY">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lTh-Sy-BQs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -372,13 +391,31 @@
                                     <outlet property="delegate" destination="gJx-0i-l8x" id="FWt-qX-WVL"/>
                                 </connections>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XZM-5u-qDU">
+                                <rect key="frame" x="20" y="518" width="70" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="0F8-4M-NtP"/>
+                                    <constraint firstAttribute="width" constant="70" id="Rs6-p1-xZ6"/>
+                                </constraints>
+                                <size key="titleShadowOffset" width="1" height="1"/>
+                                <state key="normal" title="Back" image="Back">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="goBack:" destination="gJx-0i-l8x" eventType="touchUpInside" id="ctl-wg-eGA"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="gvR-BC-iQG" secondAttribute="centerX" id="1t0-IH-TTh"/>
                             <constraint firstItem="gvR-BC-iQG" firstAttribute="top" secondItem="dnO-Xm-qgN" secondAttribute="bottom" id="5f2-GI-cTX"/>
+                            <constraint firstItem="azd-Tn-4oU" firstAttribute="top" secondItem="XZM-5u-qDU" secondAttribute="bottom" constant="26" id="XTa-q2-abX"/>
                             <constraint firstAttribute="centerX" secondItem="xWr-z2-6is" secondAttribute="centerX" id="XvO-Wx-BS4"/>
                             <constraint firstItem="azd-Tn-4oU" firstAttribute="top" secondItem="xWr-z2-6is" secondAttribute="bottom" constant="80" id="beJ-kZ-6o8"/>
+                            <constraint firstItem="XZM-5u-qDU" firstAttribute="leading" secondItem="pui-Dl-Uau" secondAttribute="leading" constant="20" id="xG5-WX-ic4"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="q3S-yz-gCL"/>
@@ -393,6 +430,9 @@
             <point key="canvasLocation" x="633" y="837"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Back" width="24" height="24"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
