@@ -7,10 +7,7 @@
 //
 
 #import "CustomGameViewController.h"
-
-@interface CustomGameViewController ()
-
-@end
+#import "Constants.h"
 
 @implementation CustomGameViewController
 
@@ -18,6 +15,8 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    NSInteger difficulty = [[NSUserDefaults standardUserDefaults] integerForKey:DIFFICULTY_KEY];
+    self.difficulty.selectedSegmentIndex =  difficulty;
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField {

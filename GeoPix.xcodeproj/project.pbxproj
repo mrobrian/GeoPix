@@ -30,6 +30,7 @@
 		FF7A40C7191EE90C00289B20 /* GameKitHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7A40C6191EE90C00289B20 /* GameKitHelper.m */; };
 		FF7A40CA1929341000289B20 /* CustomGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7A40C91929341000289B20 /* CustomGameViewController.m */; };
 		FF7A40CD192B059700289B20 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7A40CC192B059700289B20 /* MapViewController.m */; };
+		FF7A40D0192B108B00289B20 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7A40CF192B108B00289B20 /* Constants.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,8 @@
 		FF7A40C91929341000289B20 /* CustomGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomGameViewController.m; sourceTree = "<group>"; };
 		FF7A40CB192B059700289B20 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		FF7A40CC192B059700289B20 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		FF7A40CE192B0FC200289B20 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		FF7A40CF192B108B00289B20 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,6 +218,8 @@
 			children = (
 				FF7A40C5191EE90C00289B20 /* GameKitHelper.h */,
 				FF7A40C6191EE90C00289B20 /* GameKitHelper.m */,
+				FF7A40CE192B0FC200289B20 /* Constants.h */,
+				FF7A40CF192B108B00289B20 /* Constants.m */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -332,6 +337,7 @@
 				FF7A40CA1929341000289B20 /* CustomGameViewController.m in Sources */,
 				FF7A4086191E90B800289B20 /* main.m in Sources */,
 				FF7A40B8191E98BB00289B20 /* HomeViewController.m in Sources */,
+				FF7A40D0192B108B00289B20 /* Constants.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

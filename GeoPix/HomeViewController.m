@@ -10,6 +10,7 @@
 #import "FlickrAPI.h"
 #import "GameKitHelper.h"
 #import <GameKit/GameKit.h>
+#import "Constants.h"
 
 @interface HomeViewController () {
     NSMutableArray *backgroundImages;
@@ -28,6 +29,10 @@
     currentBackgroundImage = 0;
     [self loadBackgroundImage];
     [GameKitHelper authenticateLocalPlayerWithViewController:self];
+    id difficulty = [[NSUserDefaults standardUserDefaults] objectForKey:DIFFICULTY_KEY];
+    if (difficulty == nil) {
+        [[NSUserDefaults standardUserDefaults] setInteger:1 forKey:DIFFICULTY_KEY];
+    }
 }
 
 - (void)didReceiveMemoryWarning

@@ -7,10 +7,7 @@
 //
 
 #import "SettingsViewController.h"
-
-@interface SettingsViewController ()
-
-@end
+#import "Constants.h"
 
 @implementation SettingsViewController
 
@@ -20,9 +17,12 @@
     // Do any additional setup after loading the view.
     
     self.versionLabel.text = [NSString stringWithFormat:@"v%@", [[[NSBundle mainBundle] infoDictionary] valueForKey:@"CFBundleShortVersionString"]];
+    NSInteger difficulty = [[NSUserDefaults standardUserDefaults] integerForKey:DIFFICULTY_KEY];
+    self.difficultySetting.selectedSegmentIndex =  difficulty;
 }
 
 - (IBAction)done:(id)sender {
+    [[NSUserDefaults standardUserDefaults] setInteger:self.difficultySetting.selectedSegmentIndex forKey:DIFFICULTY_KEY];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 @end
