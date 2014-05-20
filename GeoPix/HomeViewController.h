@@ -13,5 +13,6 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *mainImage;
 @property (weak, nonatomic) IBOutlet UIImageView *fadeImage;
+- (IBAction)startGame:(id)sender;
 
 @end

@@ -22,7 +22,7 @@ static GKLocalPlayer* _localPlayer;
     _localPlayer.authenticateHandler = ^(UIViewController *VCAuthenticate, NSError *error){
         if (VCAuthenticate != nil)
         {
-            [viewController presentViewController:viewController animated:YES completion:nil];
+            [viewController presentViewController:VCAuthenticate animated:YES completion:nil];
         }
     };
 }

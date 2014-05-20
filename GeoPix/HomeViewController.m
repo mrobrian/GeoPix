@@ -79,4 +79,13 @@
     }
 }
 
+- (IBAction)startGame:(id)sender {
+    if ([GameKitHelper localPlayer].isAuthenticated) {
+        // Segue to game board
+    } else {
+        UIAlertView *noGK = [[UIAlertView alloc] initWithTitle:@"Game Center Required" message:@"Connecting to Game Center is required for this mode." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+        [noGK show];
+    }
+}
+
 @end

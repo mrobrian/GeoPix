@@ -28,6 +28,7 @@
 		FF7A40BF191ED7DA00289B20 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7A40BE191ED7DA00289B20 /* SettingsViewController.m */; };
 		FF7A40C1191EE46700289B20 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF7A40C0191EE46700289B20 /* MapKit.framework */; };
 		FF7A40C7191EE90C00289B20 /* GameKitHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7A40C6191EE90C00289B20 /* GameKitHelper.m */; };
+		FF7A40CA1929341000289B20 /* CustomGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7A40C91929341000289B20 /* CustomGameViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,8 @@
 		FF7A40C0191EE46700289B20 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		FF7A40C5191EE90C00289B20 /* GameKitHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameKitHelper.h; sourceTree = "<group>"; };
 		FF7A40C6191EE90C00289B20 /* GameKitHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameKitHelper.m; sourceTree = "<group>"; };
+		FF7A40C81929341000289B20 /* CustomGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomGameViewController.h; sourceTree = "<group>"; };
+		FF7A40C91929341000289B20 /* CustomGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomGameViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +189,8 @@
 				FF7A40B7191E98BB00289B20 /* HomeViewController.m */,
 				FF7A40BD191ED7DA00289B20 /* SettingsViewController.h */,
 				FF7A40BE191ED7DA00289B20 /* SettingsViewController.m */,
+				FF7A40C81929341000289B20 /* CustomGameViewController.h */,
+				FF7A40C91929341000289B20 /* CustomGameViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -318,6 +323,7 @@
 				FF7A408A191E90B800289B20 /* AppDelegate.m in Sources */,
 				FF7A40C7191EE90C00289B20 /* GameKitHelper.m in Sources */,
 				FF7A40BF191ED7DA00289B20 /* SettingsViewController.m in Sources */,
+				FF7A40CA1929341000289B20 /* CustomGameViewController.m in Sources */,
 				FF7A4086191E90B800289B20 /* main.m in Sources */,
 				FF7A40B8191E98BB00289B20 /* HomeViewController.m in Sources */,
 			);
