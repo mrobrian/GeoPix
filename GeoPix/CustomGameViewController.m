@@ -36,8 +36,10 @@
         pvc.difficulty = self.difficulty.selectedSegmentIndex;
         pvc.rotation = self.rotateSwitch.on;
         pvc.searchBy = self.tagText.text;
+        pvc.type = CUSTOM;
         
-        pvc.interstitialPresentationPolicy = ADInterstitialPresentationPolicyAutomatic;
+        //TODO: Uncomment before shipping
+        //pvc.interstitialPresentationPolicy = ADInterstitialPresentationPolicyAutomatic;
     }
 }
 

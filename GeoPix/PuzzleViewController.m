@@ -20,6 +20,7 @@
     NSInteger tilesY;
     NSMutableArray *tiles;
     NSMutableArray *correctRects;
+    NSInteger selectedTile;
 }
 
 @end
@@ -33,6 +34,7 @@
     [self setNeedsStatusBarAppearanceUpdate];
     puzzleLoaded = NO;
     moves = 0;
+    selectedTile = -1;
     
     tilesX = 2 * pow(2, self.difficulty);
     tilesY = (tilesX / 2) * 3;
@@ -102,6 +104,9 @@
         CGRect frame = CGRectMake((i % tilesX) * tileWidth, (i / tilesX) * tileHeight, tileWidth, tileHeight);
         [correctRects addObject:[NSValue valueWithCGRect:frame]];
         UIView *tile = [[UIView alloc] initWithFrame:frame];
+        tile.userInteractionEnabled = YES;
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tileTouchFrom:)];
+        [tile addGestureRecognizer:tap];
         
         CGRect imageFrame = CGRectMake((i % tilesX) * imageTileWidth, (i / tilesX) * imageTileHeight, imageTileWidth, imageTileHeight);
         CGImageRef imageRef = CGImageCreateWithImageInRect([image CGImage], imageFrame);
@@ -111,10 +116,49 @@
         [tile addSubview:imageView];
         
         [tiles addObject:tile];
+
+        [self.puzzleView addSubview:(UIView*)[tiles objectAtIndex:i]];
     }
     [self shuffleTiles];
-    for (int i = 0; i < tiles.count; i++) {
-        [self.puzzleView addSubview:(UIView*)[tiles objectAtIndex:i]];
+    [self checkTilePositions];
+}
+
+-(void)tileTouchFrom:(UITapGestureRecognizer*)recognizer {
+    NSInteger index = [tiles indexOfObject:recognizer.view];
+    if (selectedTile != -1) {
+        if (selectedTile == index) {
+            if (self.rotation) {
+                //TODO: spin the tile
+            }
+            recognizer.view.backgroundColor = nil;
+        } else {
+            // swap tiles
+            UIView *fromTile = (UIView*)(tiles[selectedTile]);
+            UIView *toTile = (UIView*)(tiles[index]);
+            fromTile.backgroundColor = nil;
+            self.puzzleView.userInteractionEnabled = NO;
+            moves++;
+            [self updateMoves];
+            [UIView animateWithDuration:0.3 animations:^{
+                fromTile.alpha = 0.0;
+                toTile.alpha = 0.0;
+            } completion:^(BOOL finished) {
+                CGRect tmpRect = fromTile.frame;
+                fromTile.frame = toTile.frame;
+                toTile.frame = tmpRect;
+                [UIView animateWithDuration:0.2 animations:^{
+                    fromTile.alpha = 1.0;
+                    toTile.alpha = 1.0;
+                } completion:^(BOOL finished) {
+                    [self checkTilePositions];
+                    self.puzzleView.userInteractionEnabled = YES;
+                }];
+            }];
+        }
+        selectedTile = -1;
+    } else {
+        selectedTile = index;
+        recognizer.view.backgroundColor = [UIColor yellowColor];
     }
 }
 
@@ -123,6 +167,33 @@
     [shuffledRects shuffle];
     for (int i = 0; i < tiles.count; i++) {
         [(UIView*)[tiles objectAtIndex:i] setFrame:[[shuffledRects objectAtIndex:i] CGRectValue]];
+    }
+}
+
+-(void)checkTilePositions {
+    NSInteger totalCorrect = 0;
+    for (int i = 0; i < tiles.count; i++) {
+        UIView *tile = tiles[i];
+        CGRect correctRect = [correctRects[i] CGRectValue];
+        if (correctRect.origin.x == tile.frame.origin.x && correctRect.origin.y == tile.frame.origin.y) {
+            tile.backgroundColor = [UIColor colorWithRed:0.2 green:1.0 blue:0.4 alpha:1.0];
+            totalCorrect++;
+        } else {
+            tile.backgroundColor = nil;
+        }
+    }
+    if (totalCorrect == tilesX * tilesY) {
+        // Win
+        [time invalidate];
+        self.puzzleView.userInteractionEnabled = NO;
+        [self.puzzleView bringSubviewToFront:self.fullImage];
+        self.fullImage.alpha = 0.0;
+        self.fullImage.hidden = NO;
+        [UIView animateWithDuration:0.5 animations:^{ self.fullImage.alpha = 1.0; }];
+        if (self.type != CUSTOM) {
+            //TODO: report elapsedTime and moves
+//            NSTimeInterval elapsedTime = [[NSDate date] timeIntervalSinceDate:startTime];
+        }
     }
 }
 
