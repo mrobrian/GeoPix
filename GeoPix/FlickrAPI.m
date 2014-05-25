@@ -15,6 +15,7 @@ NSString *const FlickrAPIUrl = @"https://api.flickr.com/services/rest";
 NSArray *FlickrAPIStandardParams;
 
 BOOL isGettingPageCount = YES;
+int totalPages = 0;
 
 -(id)init {
 	if (self = [super init]) {
@@ -22,7 +23,7 @@ BOOL isGettingPageCount = YES;
         FlickrAPIStandardParams = @[
                                     @"method=flickr.photos.search",
                                     [NSString stringWithFormat:@"api_key=%@", FlickrAPIKey],
-                                    @"per_page=10",
+                                    @"per_page=20",
                                     @"format=json",
                                     @"nojsoncallback=1",
                                     @"has_geo=1",
@@ -80,21 +81,31 @@ BOOL isGettingPageCount = YES;
 -(void)connectionDidFinishLoading:(NSURLConnection *)connection {
 	NSDictionary *results = [NSJSONSerialization JSONObjectWithData:receivedData options:NSJSONReadingAllowFragments error:nil];
 	if (isGettingPageCount) {
-		int pages = [[[results objectForKey:@"photos"] objectForKey:@"pages"] intValue];
-		if (pages == 0) {
+		totalPages = [[[results objectForKey:@"photos"] objectForKey:@"pages"] intValue];
+		if (totalPages == 0) {
 			[self searchFlickrPhotos:@"London"];
 			return;
 		}
-		if (pages > 400) {
-			pages = 400;
+		if (totalPages > 400) {
+			totalPages = 400;
 		}
-		int page = (arc4random() % pages) + 1;
+		int page = (arc4random() % totalPages) + 1;
 		[self searchFlickrPhotosOnPage:page];
 		isGettingPageCount = NO;
 	} else {
 		NSArray *photos = [[results objectForKey:@"photos"] objectForKey:@"photo"];
-        NSDictionary *photo = [photos objectAtIndex:arc4random() % [photos count]];
-		[self.delegate didFinishLoading:photo];
+        for (NSDictionary *photo in photos) {
+            float height = [[photo objectForKey:@"o_height"] floatValue];
+            float width = [[photo objectForKey:@"o_width"] floatValue];
+            float twoThirds = 2.0f / 3.0f;
+            if (height && width && (width/height == twoThirds)) {
+                [self.delegate didFinishLoading:photo];
+                return;
+            }
+        }
+        // Couldn't find an appropriately sized image, so try another page
+		int page = (arc4random() % totalPages) + 1;
+		[self searchFlickrPhotosOnPage:page];
 	}
 }
 

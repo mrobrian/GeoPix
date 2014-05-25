@@ -31,6 +31,7 @@
 		FF7A40CA1929341000289B20 /* CustomGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7A40C91929341000289B20 /* CustomGameViewController.m */; };
 		FF7A40CD192B059700289B20 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7A40CC192B059700289B20 /* MapViewController.m */; };
 		FF7A40D0192B108B00289B20 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7A40CF192B108B00289B20 /* Constants.m */; };
+		FF7A40D319314A1B00289B20 /* PuzzleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7A40D219314A1B00289B20 /* PuzzleViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,8 @@
 		FF7A40CC192B059700289B20 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		FF7A40CE192B0FC200289B20 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		FF7A40CF192B108B00289B20 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		FF7A40D119314A1B00289B20 /* PuzzleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PuzzleViewController.h; sourceTree = "<group>"; };
+		FF7A40D219314A1B00289B20 /* PuzzleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PuzzleViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +200,8 @@
 				FF7A40B7191E98BB00289B20 /* HomeViewController.m */,
 				FF7A40CB192B059700289B20 /* MapViewController.h */,
 				FF7A40CC192B059700289B20 /* MapViewController.m */,
+				FF7A40D119314A1B00289B20 /* PuzzleViewController.h */,
+				FF7A40D219314A1B00289B20 /* PuzzleViewController.m */,
 				FF7A40BD191ED7DA00289B20 /* SettingsViewController.h */,
 				FF7A40BE191ED7DA00289B20 /* SettingsViewController.m */,
 			);
@@ -333,6 +338,7 @@
 				FF7A408A191E90B800289B20 /* AppDelegate.m in Sources */,
 				FF7A40C7191EE90C00289B20 /* GameKitHelper.m in Sources */,
 				FF7A40CD192B059700289B20 /* MapViewController.m in Sources */,
+				FF7A40D319314A1B00289B20 /* PuzzleViewController.m in Sources */,
 				FF7A40BF191ED7DA00289B20 /* SettingsViewController.m in Sources */,
 				FF7A40CA1929341000289B20 /* CustomGameViewController.m in Sources */,
 				FF7A4086191E90B800289B20 /* main.m in Sources */,

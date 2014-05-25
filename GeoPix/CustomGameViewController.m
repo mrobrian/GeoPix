@@ -7,6 +7,7 @@
 //
 
 #import "CustomGameViewController.h"
+#import "PuzzleViewController.h"
 #import "Constants.h"
 
 @implementation CustomGameViewController
@@ -26,6 +27,15 @@
 
 - (IBAction)goBack:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"CustomPuzzleSegue"]) {
+        PuzzleViewController *pvc = segue.destinationViewController;
+        pvc.difficulty = self.difficulty.selectedSegmentIndex;
+        pvc.rotation = self.rotateSwitch.on;
+        pvc.searchBy = self.tagText.text;
+    }
 }
 
 @end
