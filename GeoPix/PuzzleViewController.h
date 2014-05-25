@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
-#import <iAd/iAd.h>
 #import "Constants.h"
 #import "FlickrAPI.h"
 #import "FlickrAPIDelegate.h"
@@ -23,10 +22,11 @@
 
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loadingSpinner;
 @property (weak, nonatomic) IBOutlet UILabel *loadingLabel;
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UILabel *targetLabel;
 @property (weak, nonatomic) IBOutlet UILabel *movesLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timerLabel;
+@property (weak, nonatomic) IBOutlet UIView *puzzleView;
+@property (weak, nonatomic) IBOutlet UIImageView *fullImage;
 
 - (IBAction)back:(id)sender;
 

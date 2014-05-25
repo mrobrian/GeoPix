@@ -27,7 +27,7 @@ int totalPages = 0;
                                     @"format=json",
                                     @"nojsoncallback=1",
                                     @"has_geo=1",
-                                    @"extras=geo,o_dims,url_m",
+                                    @"extras=geo,url_m,url_l",
                                     @"media=photos"
                                     ];
 	}
@@ -95,10 +95,10 @@ int totalPages = 0;
 	} else {
 		NSArray *photos = [[results objectForKey:@"photos"] objectForKey:@"photo"];
         for (NSDictionary *photo in photos) {
-            float height = [[photo objectForKey:@"o_height"] floatValue];
-            float width = [[photo objectForKey:@"o_width"] floatValue];
-            float twoThirds = 2.0f / 3.0f;
-            if (height && width && (width/height == twoThirds)) {
+            float height = [[photo objectForKey:@"height_l"] floatValue];
+            float width = [[photo objectForKey:@"width_l"] floatValue];
+            // Make sure the large image is at least the right size
+            if (height && width && height == 1024 && width > 681) {
                 [self.delegate didFinishLoading:photo];
                 return;
             }

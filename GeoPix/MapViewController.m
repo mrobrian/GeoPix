@@ -7,6 +7,7 @@
 //
 
 #import "MapViewController.h"
+#import <iAd/iAd.h>
 
 @interface MapViewController ()
 
@@ -18,6 +19,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.canDisplayBannerAds = YES;
 }
 
 - (IBAction)goBack:(id)sender {

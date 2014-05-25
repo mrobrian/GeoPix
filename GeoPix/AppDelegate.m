@@ -7,12 +7,14 @@
 //
 
 #import "AppDelegate.h"
+#import <iAd/iAd.h>
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    [UIViewController prepareInterstitialAds];
     return YES;
 }
 							

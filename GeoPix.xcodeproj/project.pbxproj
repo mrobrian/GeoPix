@@ -32,6 +32,7 @@
 		FF7A40CD192B059700289B20 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7A40CC192B059700289B20 /* MapViewController.m */; };
 		FF7A40D0192B108B00289B20 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7A40CF192B108B00289B20 /* Constants.m */; };
 		FF7A40D319314A1B00289B20 /* PuzzleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7A40D219314A1B00289B20 /* PuzzleViewController.m */; };
+		FFB3FCBE1931A12100F4834A /* NSMutableArray_Shuffling.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB3FCBD1931A12100F4834A /* NSMutableArray_Shuffling.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,8 @@
 		FF7A40CF192B108B00289B20 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		FF7A40D119314A1B00289B20 /* PuzzleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PuzzleViewController.h; sourceTree = "<group>"; };
 		FF7A40D219314A1B00289B20 /* PuzzleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PuzzleViewController.m; sourceTree = "<group>"; };
+		FFB3FCBC1931A12100F4834A /* NSMutableArray_Shuffling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSMutableArray_Shuffling.h; sourceTree = "<group>"; };
+		FFB3FCBD1931A12100F4834A /* NSMutableArray_Shuffling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSMutableArray_Shuffling.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -221,6 +224,8 @@
 		FF7A40C4191EE8D700289B20 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				FFB3FCBC1931A12100F4834A /* NSMutableArray_Shuffling.h */,
+				FFB3FCBD1931A12100F4834A /* NSMutableArray_Shuffling.m */,
 				FF7A40C5191EE90C00289B20 /* GameKitHelper.h */,
 				FF7A40C6191EE90C00289B20 /* GameKitHelper.m */,
 				FF7A40CE192B0FC200289B20 /* Constants.h */,
@@ -342,6 +347,7 @@
 				FF7A40BF191ED7DA00289B20 /* SettingsViewController.m in Sources */,
 				FF7A40CA1929341000289B20 /* CustomGameViewController.m in Sources */,
 				FF7A4086191E90B800289B20 /* main.m in Sources */,
+				FFB3FCBE1931A12100F4834A /* NSMutableArray_Shuffling.m in Sources */,
 				FF7A40B8191E98BB00289B20 /* HomeViewController.m in Sources */,
 				FF7A40D0192B108B00289B20 /* Constants.m in Sources */,
 			);
@@ -550,6 +556,7 @@
 				FF7A40AA191E90B800289B20 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FF7A40AB191E90B800289B20 /* Build configuration list for PBXNativeTarget "GeoPixTests" */ = {
 			isa = XCConfigurationList;
@@ -558,6 +565,7 @@
 				FF7A40AD191E90B800289B20 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

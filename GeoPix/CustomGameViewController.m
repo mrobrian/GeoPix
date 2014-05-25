@@ -9,6 +9,7 @@
 #import "CustomGameViewController.h"
 #import "PuzzleViewController.h"
 #import "Constants.h"
+#import <iAd/iAd.h>
 
 @implementation CustomGameViewController
 
@@ -35,6 +36,8 @@
         pvc.difficulty = self.difficulty.selectedSegmentIndex;
         pvc.rotation = self.rotateSwitch.on;
         pvc.searchBy = self.tagText.text;
+        
+        pvc.interstitialPresentationPolicy = ADInterstitialPresentationPolicyAutomatic;
     }
 }
 
