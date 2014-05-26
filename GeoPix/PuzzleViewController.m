@@ -21,6 +21,7 @@
     NSMutableArray *tiles;
     NSMutableArray *correctRects;
     NSInteger selectedTile;
+    NSMutableArray *tileOrientations;
 }
 
 @end
@@ -40,6 +41,7 @@
     tilesY = (tilesX / 2) * 3;
     tiles = [NSMutableArray arrayWithCapacity:tilesX * tilesY];
     correctRects = [NSMutableArray arrayWithCapacity:tilesX * tilesY];
+    tileOrientations = [NSMutableArray arrayWithCapacity:tilesX * tilesY];
     
     flickr = [[FlickrAPI alloc] init];
     flickr.delegate = self;
@@ -53,7 +55,7 @@
 }
 
 -(void) updateMoves {
-    self.movesLabel.text = [NSString stringWithFormat:@"%lu moves", moves];
+    self.movesLabel.text = [NSString stringWithFormat:@"%lu moves", (long)moves];
 }
 
 -(void)viewWillDisappear:(BOOL)animated {
@@ -104,6 +106,11 @@
         CGRect frame = CGRectMake((i % tilesX) * tileWidth, (i / tilesX) * tileHeight, tileWidth, tileHeight);
         [correctRects addObject:[NSValue valueWithCGRect:frame]];
         UIView *tile = [[UIView alloc] initWithFrame:frame];
+        if (self.rotation) {
+            NSInteger orientation = (arc4random() % 4);
+            [tileOrientations addObject:[NSNumber numberWithInteger:orientation]];
+            tile.transform = CGAffineTransformMakeRotation(0.5 * orientation * M_PI);
+        }
         tile.userInteractionEnabled = YES;
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tileTouchFrom:)];
         [tile addGestureRecognizer:tap];
@@ -113,8 +120,9 @@
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(1, 1, tileWidth-2, tileHeight-2)];
         [imageView setImage:[UIImage imageWithCGImage:imageRef]];
         CGImageRelease(imageRef);
+        imageView.tag = 100;
         [tile addSubview:imageView];
-        
+
         [tiles addObject:tile];
 
         [self.puzzleView addSubview:(UIView*)[tiles objectAtIndex:i]];
@@ -128,7 +136,18 @@
     if (selectedTile != -1) {
         if (selectedTile == index) {
             if (self.rotation) {
-                //TODO: spin the tile
+                UIView *tile = (UIView*)(tiles[selectedTile]);
+                NSInteger orientation = [[tileOrientations objectAtIndex:index] integerValue];
+                orientation++;
+                if (orientation == 4) {
+                    orientation = 0;
+                }
+                tileOrientations[index] = [NSNumber numberWithInteger:orientation];
+                [UIView animateWithDuration:0.3 animations:^{
+                    tile.transform = CGAffineTransformMakeRotation(0.5 * orientation * M_PI);
+                } completion:^(BOOL finished) {
+                    [self checkTilePositions];
+                }];
             }
             recognizer.view.backgroundColor = nil;
         } else {
@@ -175,7 +194,9 @@
     for (int i = 0; i < tiles.count; i++) {
         UIView *tile = tiles[i];
         CGRect correctRect = [correctRects[i] CGRectValue];
-        if (correctRect.origin.x == tile.frame.origin.x && correctRect.origin.y == tile.frame.origin.y) {
+        if ((int)correctRect.origin.x == (int)tile.frame.origin.x
+            && (int)correctRect.origin.y == (int)tile.frame.origin.y
+            && [tileOrientations[i] integerValue] == 0) {
             tile.backgroundColor = [UIColor colorWithRed:0.2 green:1.0 blue:0.4 alpha:1.0];
             totalCorrect++;
         } else {

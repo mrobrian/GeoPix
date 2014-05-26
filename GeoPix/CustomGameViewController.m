@@ -32,6 +32,8 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"CustomPuzzleSegue"]) {
+        [[NSUserDefaults standardUserDefaults] setInteger:self.difficulty.selectedSegmentIndex forKey:DIFFICULTY_KEY];
+        
         PuzzleViewController *pvc = segue.destinationViewController;
         pvc.difficulty = self.difficulty.selectedSegmentIndex;
         pvc.rotation = self.rotateSwitch.on;

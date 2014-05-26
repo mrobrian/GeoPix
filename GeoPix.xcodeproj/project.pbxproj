@@ -25,7 +25,6 @@
 		FF7A40B8191E98BB00289B20 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7A40B7191E98BB00289B20 /* HomeViewController.m */; };
 		FF7A40BA191ED72900289B20 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF7A40B9191ED72900289B20 /* GameKit.framework */; };
 		FF7A40BC191ED73200289B20 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF7A40BB191ED73200289B20 /* iAd.framework */; };
-		FF7A40BF191ED7DA00289B20 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7A40BE191ED7DA00289B20 /* SettingsViewController.m */; };
 		FF7A40C1191EE46700289B20 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF7A40C0191EE46700289B20 /* MapKit.framework */; };
 		FF7A40C7191EE90C00289B20 /* GameKitHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7A40C6191EE90C00289B20 /* GameKitHelper.m */; };
 		FF7A40CA1929341000289B20 /* CustomGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7A40C91929341000289B20 /* CustomGameViewController.m */; };
@@ -71,8 +70,6 @@
 		FF7A40B7191E98BB00289B20 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		FF7A40B9191ED72900289B20 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		FF7A40BB191ED73200289B20 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
-		FF7A40BD191ED7DA00289B20 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
-		FF7A40BE191ED7DA00289B20 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		FF7A40C0191EE46700289B20 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		FF7A40C5191EE90C00289B20 /* GameKitHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameKitHelper.h; sourceTree = "<group>"; };
 		FF7A40C6191EE90C00289B20 /* GameKitHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameKitHelper.m; sourceTree = "<group>"; };
@@ -205,8 +202,6 @@
 				FF7A40CC192B059700289B20 /* MapViewController.m */,
 				FF7A40D119314A1B00289B20 /* PuzzleViewController.h */,
 				FF7A40D219314A1B00289B20 /* PuzzleViewController.m */,
-				FF7A40BD191ED7DA00289B20 /* SettingsViewController.h */,
-				FF7A40BE191ED7DA00289B20 /* SettingsViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -344,7 +339,6 @@
 				FF7A40C7191EE90C00289B20 /* GameKitHelper.m in Sources */,
 				FF7A40CD192B059700289B20 /* MapViewController.m in Sources */,
 				FF7A40D319314A1B00289B20 /* PuzzleViewController.m in Sources */,
-				FF7A40BF191ED7DA00289B20 /* SettingsViewController.m in Sources */,
 				FF7A40CA1929341000289B20 /* CustomGameViewController.m in Sources */,
 				FF7A4086191E90B800289B20 /* main.m in Sources */,
 				FFB3FCBE1931A12100F4834A /* NSMutableArray_Shuffling.m in Sources */,
