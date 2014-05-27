@@ -110,6 +110,8 @@
             NSInteger orientation = (arc4random() % 4);
             [tileOrientations addObject:[NSNumber numberWithInteger:orientation]];
             tile.transform = CGAffineTransformMakeRotation(0.5 * orientation * M_PI);
+        } else {
+            [tileOrientations addObject:[NSNumber numberWithInteger:0]];
         }
         tile.userInteractionEnabled = YES;
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tileTouchFrom:)];

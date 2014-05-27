@@ -32,6 +32,9 @@
 		FF7A40D0192B108B00289B20 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7A40CF192B108B00289B20 /* Constants.m */; };
 		FF7A40D319314A1B00289B20 /* PuzzleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7A40D219314A1B00289B20 /* PuzzleViewController.m */; };
 		FFB3FCBE1931A12100F4834A /* NSMutableArray_Shuffling.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB3FCBD1931A12100F4834A /* NSMutableArray_Shuffling.m */; };
+		FFB3FCC11933CBC700F4834A /* US Cities.plist in Resources */ = {isa = PBXBuildFile; fileRef = FFB3FCC01933CBC700F4834A /* US Cities.plist */; };
+		FFB3FCC51933E52E00F4834A /* MapViewAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB3FCC41933E52E00F4834A /* MapViewAnnotation.m */; };
+		FFB3FCC91934112900F4834A /* LocationView.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB3FCC81934112900F4834A /* LocationView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +86,11 @@
 		FF7A40D219314A1B00289B20 /* PuzzleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PuzzleViewController.m; sourceTree = "<group>"; };
 		FFB3FCBC1931A12100F4834A /* NSMutableArray_Shuffling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSMutableArray_Shuffling.h; sourceTree = "<group>"; };
 		FFB3FCBD1931A12100F4834A /* NSMutableArray_Shuffling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSMutableArray_Shuffling.m; sourceTree = "<group>"; };
+		FFB3FCC01933CBC700F4834A /* US Cities.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "US Cities.plist"; sourceTree = "<group>"; };
+		FFB3FCC31933E52E00F4834A /* MapViewAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewAnnotation.h; sourceTree = "<group>"; };
+		FFB3FCC41933E52E00F4834A /* MapViewAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewAnnotation.m; sourceTree = "<group>"; };
+		FFB3FCC71934112900F4834A /* LocationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationView.h; sourceTree = "<group>"; };
+		FFB3FCC81934112900F4834A /* LocationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,7 +161,10 @@
 				FF7A408B191E90B800289B20 /* Main.storyboard */,
 				FF7A40AF191E925600289B20 /* APIs */,
 				FF7A40C4191EE8D700289B20 /* Helpers */,
+				FFB3FCC21933E4FD00F4834A /* Models */,
+				FFB3FCC61934111100F4834A /* Views */,
 				FF7A40AE191E920E00289B20 /* ViewControllers */,
+				FFB3FCBF1933CB9A00F4834A /* Locations */,
 				FF7A4088191E90B800289B20 /* AppDelegate.h */,
 				FF7A4089191E90B800289B20 /* AppDelegate.m */,
 				FF7A4091191E90B800289B20 /* Images.xcassets */,
@@ -227,6 +238,32 @@
 				FF7A40CF192B108B00289B20 /* Constants.m */,
 			);
 			name = Helpers;
+			sourceTree = "<group>";
+		};
+		FFB3FCBF1933CB9A00F4834A /* Locations */ = {
+			isa = PBXGroup;
+			children = (
+				FFB3FCC01933CBC700F4834A /* US Cities.plist */,
+			);
+			name = Locations;
+			sourceTree = "<group>";
+		};
+		FFB3FCC21933E4FD00F4834A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FFB3FCC31933E52E00F4834A /* MapViewAnnotation.h */,
+				FFB3FCC41933E52E00F4834A /* MapViewAnnotation.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		FFB3FCC61934111100F4834A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FFB3FCC71934112900F4834A /* LocationView.h */,
+				FFB3FCC81934112900F4834A /* LocationView.m */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -316,6 +353,7 @@
 				FF7A4092191E90B800289B20 /* Images.xcassets in Resources */,
 				FF7A4084191E90B800289B20 /* InfoPlist.strings in Resources */,
 				FF7A408D191E90B800289B20 /* Main.storyboard in Resources */,
+				FFB3FCC11933CBC700F4834A /* US Cities.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,9 +377,11 @@
 				FF7A40C7191EE90C00289B20 /* GameKitHelper.m in Sources */,
 				FF7A40CD192B059700289B20 /* MapViewController.m in Sources */,
 				FF7A40D319314A1B00289B20 /* PuzzleViewController.m in Sources */,
+				FFB3FCC51933E52E00F4834A /* MapViewAnnotation.m in Sources */,
 				FF7A40CA1929341000289B20 /* CustomGameViewController.m in Sources */,
 				FF7A4086191E90B800289B20 /* main.m in Sources */,
 				FFB3FCBE1931A12100F4834A /* NSMutableArray_Shuffling.m in Sources */,
+				FFB3FCC91934112900F4834A /* LocationView.m in Sources */,
 				FF7A40B8191E98BB00289B20 /* HomeViewController.m in Sources */,
 				FF7A40D0192B108B00289B20 /* Constants.m in Sources */,
 			);

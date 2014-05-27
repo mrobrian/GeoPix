@@ -7,8 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
+#import "LocationView.h"
 
-@interface MapViewController : UIViewController
+@interface MapViewController : UIViewController <MKMapViewDelegate>
+@property (weak, nonatomic) IBOutlet MKMapView *mapView;
+@property (weak, nonatomic) IBOutlet LocationView *locationView;
+@property (weak, nonatomic) IBOutlet UILabel *locationTitle;
+- (IBAction)hideLocationView:(id)sender;
 
 - (IBAction)goBack:(id)sender;
 
