@@ -71,7 +71,11 @@
         }
         time = [NSTimer scheduledTimerWithTimeInterval:0.2 target:self selector:@selector(incrementTimer) userInfo:nil repeats:YES];
     } else {
-        [flickr searchFlickrPhotos:self.searchBy];
+        if (CLLocationCoordinate2DIsValid(self.location)) {
+            [flickr searchFlickrPhotosByLocation:self.location withRadius:self.radius];
+        } else {
+            [flickr searchFlickrPhotos:self.searchBy];
+        }
     }
 }
 

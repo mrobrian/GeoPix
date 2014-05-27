@@ -16,8 +16,10 @@
 
 @property (nonatomic) PUZZLE_TYPE type;
 @property (nonatomic) NSInteger difficulty;
+@property (nonatomic) NSInteger target;
 @property (nonatomic) BOOL rotation;
-@property (nonatomic, strong) CLLocation *location;
+@property (nonatomic) CLLocationCoordinate2D location;
+@property (nonatomic) int radius;
 @property (nonatomic, strong) NSString *searchBy;
 
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loadingSpinner;

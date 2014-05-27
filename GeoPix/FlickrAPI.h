@@ -18,7 +18,7 @@
 @property (nonatomic, retain) NSString *searchString;
 
 -(void)searchFlickrPhotos:(NSString *)text;
--(void)searchFlickrPhotosByLocation:(CLLocation *)location withRadius:(int)radius;
+-(void)searchFlickrPhotosByLocation:(CLLocationCoordinate2D)location withRadius:(int)radius;
 -(void)searchFlickrPhotosOnPage:(int)page;
 
 @end

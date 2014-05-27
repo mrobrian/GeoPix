@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet LocationView *locationView;
 @property (weak, nonatomic) IBOutlet UILabel *locationTitle;
 - (IBAction)hideLocationView:(id)sender;
+- (IBAction)playPuzzle:(id)sender;
 
 - (IBAction)goBack:(id)sender;
 

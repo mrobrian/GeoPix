@@ -47,7 +47,7 @@ int totalPages = 0;
 	[self searchFlickrPhotosOnPage:1];
 }
 
--(void)searchFlickrPhotosByLocation:(CLLocation *)location withRadius:(int)radius {
+-(void)searchFlickrPhotosByLocation:(CLLocationCoordinate2D)location withRadius:(int)radius {
 	isGettingPageCount = YES;
 	NSDate *date = [NSDate date];
 	date = [date dateByAddingTimeInterval:-60 * 60 * 24 * 45];
@@ -56,8 +56,8 @@ int totalPages = 0;
 	self.searchString = [NSString stringWithFormat:@"%@?%@&lat=%f&lon=%f&radius=%i&min_taken_date=%@&page=%%i",
 						 FlickrAPIUrl,
                          [FlickrAPIStandardParams componentsJoinedByString:@"&"],
-						 location.coordinate.latitude,
-						 location.coordinate.longitude,
+						 location.latitude,
+						 location.longitude,
                          radius,
 						 [formatter stringFromDate:date]
 						 ];

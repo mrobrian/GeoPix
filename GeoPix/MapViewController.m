@@ -8,6 +8,7 @@
 
 #import "MapViewController.h"
 #import "MapViewAnnotation.h"
+#import "PuzzleViewController.h"
 #import "Constants.h"
 #import <iAd/iAd.h>
 
@@ -56,6 +57,8 @@
     }
     annotationView.canShowCallout = NO;
     annotationView.image = [UIImage imageNamed:@"NewLocation"];
+    annotationView.backgroundColor = [UIColor blackColor];
+    annotationView.layer.cornerRadius = 12.0f;
     
     return annotationView;
 }
@@ -73,7 +76,22 @@
     [UIView animateWithDuration:0.3 animations:^{
         self.locationView.alpha = 1.0;
     }];
-    [mapView deselectAnnotation:annotation animated:NO];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"MapPlaySegue"]) {
+        MapViewAnnotation *annotation = (MapViewAnnotation*)[sender objectForKey:@"annotation"];
+        PuzzleViewController *pvc = (PuzzleViewController*)segue.destinationViewController;
+        NSInteger tag = [[sender objectForKey:@"tag"] intValue] % 500;
+        NSArray *puzzles = [annotation.location objectForKey:@"Puzzles"];
+        pvc.difficulty = [[puzzles[tag] objectForKey:@"Difficulty"] intValue];
+        pvc.target = [[puzzles[tag] objectForKey:@"Target"] intValue];
+        pvc.rotation = (tag > 2);
+        pvc.location = annotation.coordinate;
+        pvc.radius = [[annotation.location objectForKey:@"Radius"] intValue];
+        pvc.type = tag % 2 == 1 ? MOVES : TIMED;
+    }
+    
 }
 
 - (IBAction)hideLocationView:(id)sender {
@@ -81,7 +99,13 @@
         self.locationView.alpha = 0.0;
     } completion:^(BOOL finished) {
         self.locationView.hidden = YES;
+        [self.mapView deselectAnnotation:self.mapView.selectedAnnotations[0] animated:NO];
     }];
+}
+
+- (IBAction)playPuzzle:(id)sender {
+    MapViewAnnotation *annotation = (MapViewAnnotation*)self.mapView.selectedAnnotations[0];
+    [self performSegueWithIdentifier:@"MapPlaySegue" sender:@{ @"annotation": annotation, @"tag": [NSNumber numberWithInteger:((UIView*)sender).tag] }];
 }
 
 - (IBAction)goBack:(id)sender {
