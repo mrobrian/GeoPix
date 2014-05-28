@@ -100,7 +100,7 @@ int totalPages = 0;
             float height = [[photo objectForKey:@"height_l"] floatValue];
             float width = [[photo objectForKey:@"width_l"] floatValue];
             // Make sure the large image is at least the right size
-            if (height && width && height == 1024 && width > 681 && width < 740) {
+            if (height && width && height == 1024 && width > 681 && width < 780) {
                 [self.delegate didFinishLoading:photo];
                 return;
             }
