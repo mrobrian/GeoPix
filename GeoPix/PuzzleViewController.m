@@ -93,6 +93,16 @@
     self.loadingSpinner.hidden = YES;
     puzzleLoaded = YES;
     
+    if (self.target != 0) {
+        NSString *target;
+        if (self.type == TIMED) {
+            target = [NSString stringWithFormat:@"%02lu:%02lu", self.target / 60, self.target % 60];
+        } else {
+            target = [NSString stringWithFormat:@"%lu moves", self.target];
+        }
+        self.targetLabel.text = [NSString stringWithFormat:@"Target: %@", target];
+    }
+    
     [self updateMoves];
 
     if (self.isViewLoaded && self.view.window) {

@@ -89,7 +89,7 @@
         pvc.rotation = (tag > 2);
         pvc.location = annotation.coordinate;
         pvc.radius = [[annotation.location objectForKey:@"Radius"] intValue];
-        pvc.type = tag % 2 == 1 ? MOVES : TIMED;
+        pvc.type = tag % 2 == 1 ? TIMED : MOVES;
     }
     
 }

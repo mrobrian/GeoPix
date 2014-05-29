@@ -184,7 +184,7 @@
                                             <button opaque="NO" tag="501" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tF9-M2-J0T">
                                                 <rect key="frame" x="20" y="201" width="100" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" red="0.29055345059999999" green="0.90056776999999999" blue="0.40437117220000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" red="0.1401192952699952" green="0.74160953443877553" blue="0.10696359241782739" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="100" id="bd4-Xm-GkD"/>
                                                     <constraint firstAttribute="height" constant="30" id="nZj-oU-Yso"/>
@@ -295,7 +295,7 @@
                                             <button opaque="NO" tag="502" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sie-Yy-mp8">
                                                 <rect key="frame" x="20" y="201" width="100" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" red="0.29055345059999999" green="0.90056776999999999" blue="0.40437117220000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" red="0.1401192953" green="0.74160953439999999" blue="0.1069635924" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="duh-hi-MMN"/>
                                                     <constraint firstAttribute="width" constant="100" id="ezY-4f-ziI"/>
@@ -422,7 +422,7 @@
                                             <button opaque="NO" tag="503" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="arV-Km-w40">
                                                 <rect key="frame" x="20" y="201" width="100" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" red="0.29055345059999999" green="0.90056776999999999" blue="0.40437117220000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" red="0.1401192953" green="0.74160953439999999" blue="0.1069635924" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="IsO-Bc-zJy"/>
                                                     <constraint firstAttribute="width" constant="100" id="M1a-wa-tQQ"/>
@@ -559,7 +559,7 @@
                                             <button opaque="NO" tag="504" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bUh-it-QXe">
                                                 <rect key="frame" x="20" y="201" width="100" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" red="0.29055345059999999" green="0.90056776999999999" blue="0.40437117220000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" red="0.1401192953" green="0.74160953439999999" blue="0.1069635924" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="100" id="QtH-0a-9SO"/>
                                                     <constraint firstAttribute="height" constant="30" id="syZ-i8-RJl"/>
@@ -820,7 +820,7 @@
                                     <action selector="goBack:" destination="apL-AX-8UL" eventType="touchUpInside" id="y03-yV-xjt"/>
                                 </connections>
                             </button>
-                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Target: 150 moves" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bgt-8E-Dbb">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bgt-8E-Dbb">
                                 <rect key="frame" x="149" y="531" width="150" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
