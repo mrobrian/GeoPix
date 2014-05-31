@@ -10,13 +10,22 @@
 #import <MapKit/MapKit.h>
 #import "LocationView.h"
 
-@interface MapViewController : UIViewController <MKMapViewDelegate>
+@interface MapViewController : UIViewController <MKMapViewDelegate, UITableViewDataSource, UITableViewDelegate>
+
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (weak, nonatomic) IBOutlet LocationView *locationView;
 @property (weak, nonatomic) IBOutlet UILabel *locationTitle;
+@property (weak, nonatomic) IBOutlet UILabel *p1Target;
+@property (weak, nonatomic) IBOutlet UILabel *p2Target;
+@property (weak, nonatomic) IBOutlet UILabel *p3Target;
+@property (weak, nonatomic) IBOutlet UILabel *p4Target;
+@property (weak, nonatomic) IBOutlet UIImageView *p1Medal;
+@property (weak, nonatomic) IBOutlet UIImageView *p2Medal;
+@property (weak, nonatomic) IBOutlet UIImageView *p3Medal;
+@property (weak, nonatomic) IBOutlet UIImageView *p4Medal;
+
 - (IBAction)hideLocationView:(id)sender;
 - (IBAction)playPuzzle:(id)sender;
-
 - (IBAction)goBack:(id)sender;
 
 @end

@@ -51,7 +51,7 @@
     NSDate *nowTime = [NSDate date];
     NSTimeInterval elapsed = [nowTime timeIntervalSinceDate:startTime];
     NSUInteger seconds = (NSUInteger)round(elapsed);
-    self.timerLabel.text = [NSString stringWithFormat:@"%02lu:%02lu", seconds / 60, seconds % 60];
+    self.timerLabel.text = [NSString stringWithFormat:@"%02lu:%02lu", (long)(seconds / 60), (long)(seconds % 60)];
 }
 
 -(void) updateMoves {
@@ -96,9 +96,9 @@
     if (self.target != 0) {
         NSString *target;
         if (self.type == TIMED) {
-            target = [NSString stringWithFormat:@"%02lu:%02lu", self.target / 60, self.target % 60];
+            target = [NSString stringWithFormat:@"%02ld:%02ld", (long)(self.target / 60), (long)(self.target % 60)];
         } else {
-            target = [NSString stringWithFormat:@"%lu moves", self.target];
+            target = [NSString stringWithFormat:@"%lu moves", (long)self.target];
         }
         self.targetLabel.text = [NSString stringWithFormat:@"Target: %@", target];
     }

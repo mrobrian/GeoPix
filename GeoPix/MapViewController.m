@@ -73,9 +73,27 @@
     self.locationTitle.text = annotation.title;
     self.locationView.alpha = 0.0;
     self.locationView.hidden = NO;
+    
+    NSArray *puzzles = [annotation.location objectForKey:@"Puzzles"];
+    [self updateTargetLabel:self.p1Target withPuzzle:puzzles[0] tag:1];
+    [self updateTargetLabel:self.p2Target withPuzzle:puzzles[1] tag:2];
+    [self updateTargetLabel:self.p3Target withPuzzle:puzzles[2] tag:3];
+    [self updateTargetLabel:self.p4Target withPuzzle:puzzles[3] tag:4];
+    
     [UIView animateWithDuration:0.3 animations:^{
         self.locationView.alpha = 1.0;
     }];
+}
+
+-(void)updateTargetLabel:(UILabel*)label withPuzzle:(NSDictionary*)puzzle tag:(NSInteger)tag {
+    NSString *target;
+    NSInteger targetValue = [[puzzle objectForKey:@"Target"] intValue];
+    if (tag % 2 == 0) {
+        target = [NSString stringWithFormat:@"%02lu:%02lu", (long)(targetValue / 60), (long)(targetValue % 60)];
+    } else {
+        target = [NSString stringWithFormat:@"%lu moves", (long)targetValue];
+    }
+    label.text = [NSString stringWithFormat:@"Target: %@", target];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -84,12 +102,13 @@
         PuzzleViewController *pvc = (PuzzleViewController*)segue.destinationViewController;
         NSInteger tag = [[sender objectForKey:@"tag"] intValue] % 500;
         NSArray *puzzles = [annotation.location objectForKey:@"Puzzles"];
-        pvc.difficulty = [[puzzles[tag] objectForKey:@"Difficulty"] intValue];
-        pvc.target = [[puzzles[tag] objectForKey:@"Target"] intValue];
+        NSDictionary *puzzle = puzzles[tag - 1];
+        pvc.difficulty = [[puzzle objectForKey:@"Difficulty"] intValue];
+        pvc.target = [[puzzle objectForKey:@"Target"] intValue];
         pvc.rotation = (tag > 2);
         pvc.location = annotation.coordinate;
         pvc.radius = [[annotation.location objectForKey:@"Radius"] intValue];
-        pvc.type = tag % 2 == 1 ? TIMED : MOVES;
+        pvc.type = tag % 2 == 0 ? TIMED : MOVES;
     }
     
 }
@@ -110,6 +129,14 @@
 
 - (IBAction)goBack:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 0;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return [tableView dequeueReusableCellWithIdentifier:@"LocationLeaderboardCell"];
 }
 
 @end
