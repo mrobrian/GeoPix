@@ -163,7 +163,7 @@
                                     <action selector="goBack:" destination="apL-AX-8UL" eventType="touchUpInside" id="rRg-OT-G4E"/>
                                 </connections>
                             </button>
-                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UTu-8T-FhX" customClass="LocationView">
+                            <view hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UTu-8T-FhX" customClass="LocationView">
                                 <rect key="frame" x="20" y="20" width="282" height="530"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
@@ -855,7 +855,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="0Gl-Ry-T67">
-                                <rect key="frame" x="101" y="274" width="20" height="20"/>
+                                <rect key="frame" x="101" y="275" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="20" id="DcR-dC-oci"/>
@@ -863,7 +863,7 @@
                                 </constraints>
                             </activityIndicatorView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ahw-hp-tkl">
-                                <rect key="frame" x="129" y="273" width="90" height="21"/>
+                                <rect key="frame" x="129" y="274" width="90" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="HAh-BB-Hf2"/>
@@ -941,6 +941,53 @@
                                     <constraint firstItem="pp5-wJ-Foc" firstAttribute="top" secondItem="ZGS-Ge-AQ3" secondAttribute="top" id="qLJ-Y6-9lh"/>
                                 </constraints>
                             </view>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AZB-Wm-6WO">
+                                <rect key="frame" x="0.0" y="235" width="319" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Out of Moves" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="30" translatesAutoresizingMaskIntoConstraints="NO" id="NmE-RR-M73">
+                                        <rect key="frame" x="0.0" y="0.0" width="319" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="Epw-uT-Tcl"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="34"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                        <size key="shadowOffset" width="0.0" height="0.0"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9mX-WS-WBy">
+                                        <rect key="frame" x="100" y="56" width="120" height="34"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="34" id="V7r-d8-cZG"/>
+                                            <constraint firstAttribute="width" constant="120" id="tMa-IB-Alf"/>
+                                        </constraints>
+                                        <size key="titleShadowOffset" width="1" height="1"/>
+                                        <state key="normal" title="Try Again">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="gameOverButton:" destination="ZF8-Ow-7Ub" eventType="touchUpInside" id="LB5-3G-FyU"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.66000000000000003" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="centerX" secondItem="9mX-WS-WBy" secondAttribute="centerX" id="BU9-6A-CN4"/>
+                                    <constraint firstItem="NmE-RR-M73" firstAttribute="top" secondItem="AZB-Wm-6WO" secondAttribute="top" id="VH0-hV-qys"/>
+                                    <constraint firstAttribute="trailing" secondItem="NmE-RR-M73" secondAttribute="trailing" id="bjo-cB-o5b"/>
+                                    <constraint firstItem="NmE-RR-M73" firstAttribute="leading" secondItem="AZB-Wm-6WO" secondAttribute="leading" id="fhC-qz-yOC"/>
+                                    <constraint firstAttribute="height" constant="100" id="gRQ-L2-yyW"/>
+                                    <constraint firstAttribute="bottom" secondItem="9mX-WS-WBy" secondAttribute="bottom" constant="10" id="r91-IO-wz0"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -949,7 +996,10 @@
                             <constraint firstAttribute="trailing" secondItem="bgt-8E-Dbb" secondAttribute="trailing" constant="20" id="8KO-7Z-551"/>
                             <constraint firstAttribute="centerY" secondItem="Ahw-hp-tkl" secondAttribute="centerY" id="8tH-y9-19V"/>
                             <constraint firstItem="Dj2-gS-3TN" firstAttribute="top" secondItem="ZGS-Ge-AQ3" secondAttribute="bottom" constant="4" id="BFb-NB-iXi"/>
+                            <constraint firstItem="AZB-Wm-6WO" firstAttribute="leading" secondItem="QPW-Cv-3uY" secondAttribute="leading" id="CB5-GD-j53"/>
                             <constraint firstAttribute="centerX" secondItem="ZGS-Ge-AQ3" secondAttribute="centerX" id="Djf-fh-UBL"/>
+                            <constraint firstAttribute="trailing" secondItem="AZB-Wm-6WO" secondAttribute="trailing" id="E4H-Dt-yAy"/>
+                            <constraint firstAttribute="centerY" secondItem="AZB-Wm-6WO" secondAttribute="centerY" id="H1e-ZB-x6V"/>
                             <constraint firstAttribute="centerY" secondItem="0Gl-Ry-T67" secondAttribute="centerY" id="aTn-2C-vLs"/>
                             <constraint firstAttribute="centerX" secondItem="Ahw-hp-tkl" secondAttribute="centerX" constant="-14" id="eJD-gA-2nZ"/>
                             <constraint firstAttribute="trailing" secondItem="LiF-4l-rnT" secondAttribute="trailing" constant="20" id="fjB-eq-2yU"/>
@@ -964,6 +1014,9 @@
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="fullImage" destination="pp5-wJ-Foc" id="DNQ-ze-Mhs"/>
+                        <outlet property="gameOverButton" destination="9mX-WS-WBy" id="Ayw-jF-6Ah"/>
+                        <outlet property="gameOverLabel" destination="NmE-RR-M73" id="h9n-lJ-458"/>
+                        <outlet property="gameOverView" destination="AZB-Wm-6WO" id="9N9-ao-bes"/>
                         <outlet property="loadingLabel" destination="Ahw-hp-tkl" id="vYo-Ek-NHd"/>
                         <outlet property="loadingSpinner" destination="0Gl-Ry-T67" id="RZA-rk-CDJ"/>
                         <outlet property="movesLabel" destination="irQ-WC-wtE" id="7PD-Ok-69B"/>
@@ -974,7 +1027,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lTh-Sy-BQs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1149" y="-7"/>
+            <point key="canvasLocation" x="1158" y="-7"/>
         </scene>
         <!--Custom Game View Controller-->
         <scene sceneID="eOv-UP-gw2">

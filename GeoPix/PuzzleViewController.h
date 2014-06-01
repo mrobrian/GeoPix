@@ -29,7 +29,17 @@
 @property (weak, nonatomic) IBOutlet UILabel *timerLabel;
 @property (weak, nonatomic) IBOutlet UIView *puzzleView;
 @property (weak, nonatomic) IBOutlet UIImageView *fullImage;
+@property (weak, nonatomic) IBOutlet UIView *gameOverView;
+@property (weak, nonatomic) IBOutlet UILabel *gameOverLabel;
+@property (weak, nonatomic) IBOutlet UIButton *gameOverButton;
 
 - (IBAction)back:(id)sender;
+- (IBAction)gameOverButton:(id)sender;
+
+typedef NS_ENUM(int, GAME_OVER_TYPE) {
+    GO_WON = 1,
+    GO_MOVES,
+    GO_TIME
+};
 
 @end

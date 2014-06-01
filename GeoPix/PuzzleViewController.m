@@ -8,6 +8,7 @@
 
 #import "PuzzleViewController.h"
 #import "NSMutableArray_Shuffling.h"
+#import <iAd/iAd.h>
 
 @interface PuzzleViewController () {
     FlickrAPI *flickr;
@@ -22,6 +23,7 @@
     NSMutableArray *correctRects;
     NSInteger selectedTile;
     NSMutableArray *tileOrientations;
+    GAME_OVER_TYPE gameOverReason;
 }
 
 @end
@@ -33,18 +35,35 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self setNeedsStatusBarAppearanceUpdate];
+    self.interstitialPresentationPolicy = ADInterstitialPresentationPolicyManual;
+    
+    flickr = [[FlickrAPI alloc] init];
+    flickr.delegate = self;
+}
+
+-(void) loadPuzzle {
     puzzleLoaded = NO;
     moves = 0;
     selectedTile = -1;
+    gameOverReason = 0;
+    startTime = nil;
     
+    self.puzzleView.hidden = YES;
+    self.gameOverView.hidden = YES;
+    self.loadingLabel.hidden = NO;
+    self.loadingSpinner.hidden = NO;
+
     tilesX = 2 * pow(2, self.difficulty);
     tilesY = (tilesX / 2) * 3;
     tiles = [NSMutableArray arrayWithCapacity:tilesX * tilesY];
     correctRects = [NSMutableArray arrayWithCapacity:tilesX * tilesY];
     tileOrientations = [NSMutableArray arrayWithCapacity:tilesX * tilesY];
     
-    flickr = [[FlickrAPI alloc] init];
-    flickr.delegate = self;
+    if (CLLocationCoordinate2DIsValid(self.location)) {
+        [flickr searchFlickrPhotosByLocation:self.location withRadius:self.radius];
+    } else {
+        [flickr searchFlickrPhotos:self.searchBy];
+    }
 }
 
 -(void) incrementTimer {
@@ -52,10 +71,18 @@
     NSTimeInterval elapsed = [nowTime timeIntervalSinceDate:startTime];
     NSUInteger seconds = (NSUInteger)round(elapsed);
     self.timerLabel.text = [NSString stringWithFormat:@"%02lu:%02lu", (long)(seconds / 60), (long)(seconds % 60)];
+    if (self.type == TIMED && seconds >= self.target) {
+        [time invalidate];
+        [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(showGameOverView:) userInfo:[NSNumber numberWithInt:GO_TIME] repeats:NO];
+    }
 }
 
 -(void) updateMoves {
     self.movesLabel.text = [NSString stringWithFormat:@"%lu moves", (long)moves];
+    if (self.type == MOVES && moves >= self.target && self.fullImage.hidden) {
+        [time invalidate];
+        [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(showGameOverView:) userInfo:[NSNumber numberWithInt:GO_MOVES] repeats:NO];
+    }
 }
 
 -(void)viewWillDisappear:(BOOL)animated {
@@ -71,16 +98,8 @@
         }
         time = [NSTimer scheduledTimerWithTimeInterval:0.2 target:self selector:@selector(incrementTimer) userInfo:nil repeats:YES];
     } else {
-        if (CLLocationCoordinate2DIsValid(self.location)) {
-            [flickr searchFlickrPhotosByLocation:self.location withRadius:self.radius];
-        } else {
-            [flickr searchFlickrPhotos:self.searchBy];
-        }
+        [self loadPuzzle];
     }
-}
-
--(void)viewDidLayoutSubviews {
-    // Puzzle is changing size, so adjust tiles
 }
 
 -(void)didFinishLoading:(NSDictionary *)info {
@@ -105,9 +124,9 @@
     
     [self updateMoves];
 
-    if (self.isViewLoaded && self.view.window) {
+    if (self.isViewLoaded && self.view.window && !self.isPresentingFullScreenAd) {
         startTime = [NSDate date];
-        time = [NSTimer scheduledTimerWithTimeInterval:0.3 target:self selector:@selector(incrementTimer) userInfo:nil repeats:YES];
+        time = [NSTimer scheduledTimerWithTimeInterval:0.2 target:self selector:@selector(incrementTimer) userInfo:nil repeats:YES];
     }
 }
 
@@ -143,8 +162,12 @@
 
         [self.puzzleView addSubview:(UIView*)[tiles objectAtIndex:i]];
     }
-    [self shuffleTiles];
+    // Make sure no more than 20% of the tiles are correct to begin with
+    while ([self correctTilesCount] > (tilesX * tilesY) / 5) {
+        [self shuffleTiles];
+    }
     [self checkTilePositions];
+    self.puzzleView.userInteractionEnabled = YES;
 }
 
 -(void)tileTouchFrom:(UITapGestureRecognizer*)recognizer {
@@ -173,7 +196,6 @@
             fromTile.backgroundColor = nil;
             self.puzzleView.userInteractionEnabled = NO;
             moves++;
-            [self updateMoves];
             [UIView animateWithDuration:0.3 animations:^{
                 fromTile.alpha = 0.0;
                 toTile.alpha = 0.0;
@@ -186,6 +208,7 @@
                     toTile.alpha = 1.0;
                 } completion:^(BOOL finished) {
                     [self checkTilePositions];
+                    [self updateMoves];
                     self.puzzleView.userInteractionEnabled = YES;
                 }];
             }];
@@ -205,7 +228,7 @@
     }
 }
 
--(void)checkTilePositions {
+-(NSInteger)correctTilesCount {
     NSInteger totalCorrect = 0;
     for (int i = 0; i < tiles.count; i++) {
         UIView *tile = tiles[i];
@@ -219,6 +242,11 @@
             tile.backgroundColor = nil;
         }
     }
+    return totalCorrect;
+}
+
+-(void)checkTilePositions {
+    NSInteger totalCorrect = [self correctTilesCount];
     if (totalCorrect == tilesX * tilesY) {
         // Win
         [time invalidate];
@@ -227,6 +255,7 @@
         self.fullImage.alpha = 0.0;
         self.fullImage.hidden = NO;
         [UIView animateWithDuration:0.5 animations:^{ self.fullImage.alpha = 1.0; }];
+        [NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(showGameOverView:) userInfo:[NSNumber numberWithInt:GO_WON] repeats:NO];
         if (self.type != CUSTOM) {
             //TODO: report elapsedTime and moves
 //            NSTimeInterval elapsedTime = [[NSDate date] timeIntervalSinceDate:startTime];
@@ -234,8 +263,52 @@
     }
 }
 
+-(void)showGameOverView:(NSTimer*)timer {
+    self.puzzleView.userInteractionEnabled = NO;
+    self.gameOverView.alpha = 0;
+    self.gameOverView.hidden = NO;
+    gameOverReason = [(NSNumber*)timer.userInfo intValue];
+    switch (gameOverReason) {
+        case GO_WON:
+            self.gameOverLabel.text = @"You Win!";
+            [self.gameOverButton setTitle:@"Ok" forState:UIControlStateNormal];
+            break;
+        case GO_MOVES:
+            self.gameOverLabel.text = @"Out of Moves";
+            [self.gameOverButton setTitle:@"Retry" forState:UIControlStateNormal];
+            break;
+        case GO_TIME:
+            self.gameOverLabel.text = @"Out of Time";
+            [self.gameOverButton setTitle:@"Retry" forState:UIControlStateNormal];
+            break;
+        default:
+            break;
+    }
+    [UIView animateWithDuration:0.3 animations:^{
+        self.gameOverView.alpha = 1.0;
+    }];
+}
+
 - (IBAction)back:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)gameOverButton:(id)sender {
+    switch (gameOverReason) {
+        case GO_WON:
+            [self dismissViewControllerAnimated:YES completion:nil];
+            break;
+        case GO_TIME:
+        case GO_MOVES:
+        default:
+            for (UIView *tile in tiles) {
+                [tile removeFromSuperview];
+            }
+            [tiles removeAllObjects];
+            [self loadPuzzle];
+            [self requestInterstitialAdPresentation];
+            break;
+    }
 }
 
 -(UIStatusBarStyle)preferredStatusBarStyle{

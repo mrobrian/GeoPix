@@ -19,7 +19,7 @@
 				<key>Difficulty</key>
 				<integer>0</integer>
 				<key>Target</key>
-				<integer>5</integer>
+				<integer>10</integer>
 			</dict>
 			<dict>
 				<key>Difficulty</key>
@@ -31,7 +31,7 @@
 				<key>Difficulty</key>
 				<integer>0</integer>
 				<key>Target</key>
-				<integer>5</integer>
+				<integer>10</integer>
 			</dict>
 			<dict>
 				<key>Difficulty</key>
