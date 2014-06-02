@@ -10,11 +10,14 @@
 #import "MapViewAnnotation.h"
 #import "PuzzleViewController.h"
 #import "Constants.h"
+#import "PuzzleHelper.h"
+#import "LeaderboardTableViewCell.h"
 #import <iAd/iAd.h>
 
 @interface MapViewController () {
     NSArray *locations;
-    NSMutableArray *visibleLocations;
+    NSMutableArray *annotations;
+    NSString *locationId;
 }
 
 @end
@@ -27,25 +30,33 @@
     // Do any additional setup after loading the view.
     self.canDisplayBannerAds = YES;
     
-    visibleLocations = [[NSUserDefaults standardUserDefaults] objectForKey:VISIBLE_LOCATIONS_KEY];
-    if (visibleLocations == nil) {
-        visibleLocations = [NSMutableArray arrayWithObject:@"SAN"];
-        [[NSUserDefaults standardUserDefaults] setObject:visibleLocations forKey:VISIBLE_LOCATIONS_KEY];
-    }
-    
     NSString *path = [[NSBundle mainBundle] pathForResource:@"US Cities" ofType:@"plist"];
     locations = [NSArray arrayWithContentsOfFile:path];
+    annotations = [NSMutableArray arrayWithCapacity:0];
     
-    NSMutableArray *annotations = [NSMutableArray arrayWithCapacity:0];
+    self.mapView.centerCoordinate = CLLocationCoordinate2DMake([[locations[0] objectForKey:@"Latitude"] doubleValue], [[locations[0] objectForKey:@"Longitude"] doubleValue]);
+    self.mapView.region = MKCoordinateRegionMake(self.mapView.centerCoordinate, MKCoordinateSpanMake(15, 15));
+}
+
+-(void)viewDidAppear:(BOOL)animated {
+    [self updateAnnotations];
+}
+
+-(void)updateAnnotations {
+    [self.mapView removeAnnotations:annotations];
     for (NSDictionary *location in locations) {
-        if ([visibleLocations containsObject:[location objectForKey:@"ID"]]) {
+        if ([PuzzleHelper canShowLocation:[location objectForKey:@"ID"]]) {
             MapViewAnnotation *annotation = [[MapViewAnnotation alloc] initWithLocation:location];
             [annotations addObject:annotation];
+            NSArray *connections = [location objectForKey:@"Connections"];
+            for (NSString *connectionId in connections) {
+                if ([PuzzleHelper canShowLocation:connectionId]) {
+                    // TODO: Show connections overlay
+                }
+            }
         }
     }
     [self.mapView addAnnotations:annotations];
-    self.mapView.centerCoordinate = CLLocationCoordinate2DMake([[locations[0] objectForKey:@"Latitude"] doubleValue], [[locations[0] objectForKey:@"Longitude"] doubleValue]);
-    self.mapView.region = MKCoordinateRegionMake(self.mapView.centerCoordinate, MKCoordinateSpanMake(15, 15));
 }
 
 -(MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
@@ -73,16 +84,46 @@
     self.locationTitle.text = annotation.title;
     self.locationView.alpha = 0.0;
     self.locationView.hidden = NO;
+    locationId = [annotation.location objectForKey:@"ID"];
     
     NSArray *puzzles = [annotation.location objectForKey:@"Puzzles"];
     [self updateTargetLabel:self.p1Target withPuzzle:puzzles[0] tag:1];
     [self updateTargetLabel:self.p2Target withPuzzle:puzzles[1] tag:2];
     [self updateTargetLabel:self.p3Target withPuzzle:puzzles[2] tag:3];
     [self updateTargetLabel:self.p4Target withPuzzle:puzzles[3] tag:4];
+    self.p1View.backgroundColor = [self colorForScore:[PuzzleHelper scoreForLocation:locationId withNumber:1]
+                                           withTarget:[[puzzles[0] objectForKey:@"Target"] integerValue]];
+    self.p2View.backgroundColor = [self colorForScore:[PuzzleHelper scoreForLocation:locationId withNumber:2]
+                                           withTarget:[[puzzles[1] objectForKey:@"Target"] integerValue]];
+    self.p3View.backgroundColor = [self colorForScore:[PuzzleHelper scoreForLocation:locationId withNumber:3]
+                                           withTarget:[[puzzles[2] objectForKey:@"Target"] integerValue]];
+    self.p4View.backgroundColor = [self colorForScore:[PuzzleHelper scoreForLocation:locationId withNumber:4]
+                                           withTarget:[[puzzles[3] objectForKey:@"Target"] integerValue]];
+    [self.p1Leaderboard reloadData];
+    [self.p2Leaderboard reloadData];
+    [self.p3Leaderboard reloadData];
+    [self.p4Leaderboard reloadData];
     
     [UIView animateWithDuration:0.3 animations:^{
         self.locationView.alpha = 1.0;
     }];
+}
+
+-(UIColor*)colorForScore:(NSInteger)score withTarget:(NSInteger)target {
+    UIColor *color;
+    
+    if (score == 0) {
+        color = [UIColor lightGrayColor];
+    } else {
+        if (score <= target / 2) { // Gold (255, 215, 0)
+            color = [UIColor colorWithRed:1.0 green:0.84 blue:0.0 alpha:1.0];
+        } else if (score <= (3 * target) / 4) { // Silver (192, 192, 192)
+            color = [UIColor colorWithRed:0.75 green:0.75 blue:0.75 alpha:1.0];
+        } else { // Bronze (205, 127, 50)
+            color = [UIColor colorWithRed:0.8 green:0.5 blue:0.2 alpha:1.0];
+        }
+    }
+    return color;
 }
 
 -(void)updateTargetLabel:(UILabel*)label withPuzzle:(NSDictionary*)puzzle tag:(NSInteger)tag {
@@ -107,6 +148,7 @@
         pvc.target = [[puzzle objectForKey:@"Target"] intValue];
         pvc.rotation = (tag > 2);
         pvc.location = annotation.coordinate;
+        pvc.locationId = locationId;
         pvc.radius = [[annotation.location objectForKey:@"Radius"] intValue];
         pvc.type = tag % 2 == 0 ? TIMED : MOVES;
     }
@@ -125,6 +167,7 @@
 - (IBAction)playPuzzle:(id)sender {
     MapViewAnnotation *annotation = (MapViewAnnotation*)self.mapView.selectedAnnotations[0];
     [self performSegueWithIdentifier:@"MapPlaySegue" sender:@{ @"annotation": annotation, @"tag": [NSNumber numberWithInteger:((UIView*)sender).tag] }];
+    self.locationView.hidden = YES;
 }
 
 - (IBAction)goBack:(id)sender {
@@ -132,11 +175,19 @@
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if ([PuzzleHelper scoreForLocation:locationId withNumber:tableView.tag % 400] > 0) {
+        tableView.hidden = NO;
+        return 1;
+    }
     return 0;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return [tableView dequeueReusableCellWithIdentifier:@"LocationLeaderboardCell"];
+    LeaderboardTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"LocationLeaderboardCell"];
+    cell.placeLabel.text = @"1. me";
+    cell.scoreLabel.text = [NSString stringWithFormat:@"%lu", (long)[PuzzleHelper scoreForLocation:locationId withNumber:tableView.tag % 400]];
+    
+    return cell;
 }
 
 @end

@@ -35,6 +35,8 @@
 		FFB3FCC11933CBC700F4834A /* US Cities.plist in Resources */ = {isa = PBXBuildFile; fileRef = FFB3FCC01933CBC700F4834A /* US Cities.plist */; };
 		FFB3FCC51933E52E00F4834A /* MapViewAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB3FCC41933E52E00F4834A /* MapViewAnnotation.m */; };
 		FFB3FCC91934112900F4834A /* LocationView.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB3FCC81934112900F4834A /* LocationView.m */; };
+		FFEECF66193BDD140035CE18 /* PuzzleHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = FFEECF65193BDD140035CE18 /* PuzzleHelper.m */; };
+		FFEECF69193BF78E0035CE18 /* LeaderboardTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FFEECF68193BF78E0035CE18 /* LeaderboardTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +93,10 @@
 		FFB3FCC41933E52E00F4834A /* MapViewAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewAnnotation.m; sourceTree = "<group>"; };
 		FFB3FCC71934112900F4834A /* LocationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationView.h; sourceTree = "<group>"; };
 		FFB3FCC81934112900F4834A /* LocationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationView.m; sourceTree = "<group>"; };
+		FFEECF64193BDD140035CE18 /* PuzzleHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PuzzleHelper.h; sourceTree = "<group>"; };
+		FFEECF65193BDD140035CE18 /* PuzzleHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PuzzleHelper.m; sourceTree = "<group>"; };
+		FFEECF67193BF78E0035CE18 /* LeaderboardTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeaderboardTableViewCell.h; sourceTree = "<group>"; };
+		FFEECF68193BF78E0035CE18 /* LeaderboardTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeaderboardTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -236,6 +242,8 @@
 				FF7A40C6191EE90C00289B20 /* GameKitHelper.m */,
 				FF7A40CE192B0FC200289B20 /* Constants.h */,
 				FF7A40CF192B108B00289B20 /* Constants.m */,
+				FFEECF64193BDD140035CE18 /* PuzzleHelper.h */,
+				FFEECF65193BDD140035CE18 /* PuzzleHelper.m */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -262,6 +270,8 @@
 			children = (
 				FFB3FCC71934112900F4834A /* LocationView.h */,
 				FFB3FCC81934112900F4834A /* LocationView.m */,
+				FFEECF67193BF78E0035CE18 /* LeaderboardTableViewCell.h */,
+				FFEECF68193BF78E0035CE18 /* LeaderboardTableViewCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -378,8 +388,10 @@
 				FF7A40CD192B059700289B20 /* MapViewController.m in Sources */,
 				FF7A40D319314A1B00289B20 /* PuzzleViewController.m in Sources */,
 				FFB3FCC51933E52E00F4834A /* MapViewAnnotation.m in Sources */,
+				FFEECF66193BDD140035CE18 /* PuzzleHelper.m in Sources */,
 				FF7A40CA1929341000289B20 /* CustomGameViewController.m in Sources */,
 				FF7A4086191E90B800289B20 /* main.m in Sources */,
+				FFEECF69193BF78E0035CE18 /* LeaderboardTableViewCell.m in Sources */,
 				FFB3FCBE1931A12100F4834A /* NSMutableArray_Shuffling.m in Sources */,
 				FFB3FCC91934112900F4834A /* LocationView.m in Sources */,
 				FF7A40B8191E98BB00289B20 /* HomeViewController.m in Sources */,

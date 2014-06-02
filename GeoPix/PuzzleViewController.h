@@ -21,6 +21,7 @@
 @property (nonatomic) CLLocationCoordinate2D location;
 @property (nonatomic) int radius;
 @property (nonatomic, strong) NSString *searchBy;
+@property (nonatomic, strong) NSString *locationId;
 
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loadingSpinner;
 @property (weak, nonatomic) IBOutlet UILabel *loadingLabel;

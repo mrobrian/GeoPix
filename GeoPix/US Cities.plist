@@ -41,7 +41,9 @@
 			</dict>
 		</array>
 		<key>Connections</key>
-		<array/>
+		<array>
+			<string>LAX</string>
+		</array>
 	</dict>
 	<dict>
 		<key>ID</key>

@@ -23,6 +23,14 @@
 @property (weak, nonatomic) IBOutlet UIImageView *p2Medal;
 @property (weak, nonatomic) IBOutlet UIImageView *p3Medal;
 @property (weak, nonatomic) IBOutlet UIImageView *p4Medal;
+@property (weak, nonatomic) IBOutlet UIView *p1View;
+@property (weak, nonatomic) IBOutlet UIView *p2View;
+@property (weak, nonatomic) IBOutlet UIView *p3View;
+@property (weak, nonatomic) IBOutlet UIView *p4View;
+@property (weak, nonatomic) IBOutlet UITableView *p1Leaderboard;
+@property (weak, nonatomic) IBOutlet UITableView *p2Leaderboard;
+@property (weak, nonatomic) IBOutlet UITableView *p3Leaderboard;
+@property (weak, nonatomic) IBOutlet UITableView *p4Leaderboard;
 
 - (IBAction)hideLocationView:(id)sender;
 - (IBAction)playPuzzle:(id)sender;

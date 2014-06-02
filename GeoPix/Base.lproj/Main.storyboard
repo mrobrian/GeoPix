@@ -238,9 +238,9 @@
                                             <tableView clipsSubviews="YES" tag="401" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="24" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ExP-GU-fef">
                                                 <rect key="frame" x="2" y="72" width="136" height="122"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <color key="backgroundColor" white="1" alpha="0.70000000000000007" colorSpace="calibratedWhite"/>
                                                 <prototypes>
-                                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LocationLeaderboardCell" id="aw7-5u-Xme">
+                                                    <tableViewCell opaque="NO" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LocationLeaderboardCell" id="aw7-5u-Xme" customClass="LeaderboardTableViewCell">
                                                         <rect key="frame" x="0.0" y="22" width="136" height="24"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aw7-5u-Xme" id="3ii-nU-kTB">
@@ -248,13 +248,13 @@
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1. mrobrian" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="snI-ep-LpI">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="92" height="24"/>
+                                                                    <rect key="frame" x="4" y="0.0" width="84" height="24"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="12"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VrH-5j-DIb">
-                                                                    <rect key="frame" x="96" y="0.0" width="40" height="24"/>
+                                                                    <rect key="frame" x="92" y="0.0" width="40" height="24"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="40" id="eq6-17-7rK"/>
@@ -265,14 +265,19 @@
                                                             </subviews>
                                                             <constraints>
                                                                 <constraint firstItem="snI-ep-LpI" firstAttribute="top" secondItem="3ii-nU-kTB" secondAttribute="top" id="ANA-dF-9Kh"/>
-                                                                <constraint firstItem="snI-ep-LpI" firstAttribute="leading" secondItem="3ii-nU-kTB" secondAttribute="leading" id="YDE-lE-MMe"/>
+                                                                <constraint firstItem="snI-ep-LpI" firstAttribute="leading" secondItem="3ii-nU-kTB" secondAttribute="leading" constant="4" id="YDE-lE-MMe"/>
                                                                 <constraint firstAttribute="bottom" secondItem="snI-ep-LpI" secondAttribute="bottom" id="gNX-D3-dMy"/>
                                                                 <constraint firstItem="VrH-5j-DIb" firstAttribute="leading" secondItem="snI-ep-LpI" secondAttribute="trailing" constant="4" id="iao-mu-KQb"/>
-                                                                <constraint firstAttribute="trailing" secondItem="VrH-5j-DIb" secondAttribute="trailing" id="kWZ-H0-Oxi"/>
+                                                                <constraint firstAttribute="trailing" secondItem="VrH-5j-DIb" secondAttribute="trailing" constant="4" id="kWZ-H0-Oxi"/>
                                                                 <constraint firstAttribute="bottom" secondItem="VrH-5j-DIb" secondAttribute="bottom" id="n5s-YN-1z1"/>
                                                                 <constraint firstItem="VrH-5j-DIb" firstAttribute="top" secondItem="3ii-nU-kTB" secondAttribute="top" id="rjS-FS-EEg"/>
                                                             </constraints>
                                                         </tableViewCellContentView>
+                                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
+                                                        <connections>
+                                                            <outlet property="placeLabel" destination="snI-ep-LpI" id="cLu-ge-bxS"/>
+                                                            <outlet property="scoreLabel" destination="VrH-5j-DIb" id="VLG-66-z42"/>
+                                                        </connections>
                                                     </tableViewCell>
                                                 </prototypes>
                                                 <connections>
@@ -379,9 +384,9 @@
                                             <tableView clipsSubviews="YES" tag="402" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="24" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="tp9-Dh-MXU">
                                                 <rect key="frame" x="2" y="72" width="136" height="122"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <color key="backgroundColor" white="1" alpha="0.69999999999999996" colorSpace="calibratedWhite"/>
                                                 <prototypes>
-                                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LocationLeaderboardCell" id="BMT-K7-lpf">
+                                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LocationLeaderboardCell" id="BMT-K7-lpf" customClass="LeaderboardTableViewCell">
                                                         <rect key="frame" x="0.0" y="22" width="136" height="24"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BMT-K7-lpf" id="maN-zP-6Vg">
@@ -389,13 +394,13 @@
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1. mrobrian" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gRo-XX-Nlw">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="92" height="24"/>
+                                                                    <rect key="frame" x="4" y="0.0" width="84" height="24"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="12"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jDT-U9-zQX">
-                                                                    <rect key="frame" x="96" y="0.0" width="40" height="24"/>
+                                                                    <rect key="frame" x="92" y="0.0" width="40" height="24"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="40" id="6ef-A5-qew"/>
@@ -406,14 +411,19 @@
                                                             </subviews>
                                                             <constraints>
                                                                 <constraint firstAttribute="bottom" secondItem="jDT-U9-zQX" secondAttribute="bottom" id="Cgd-x7-bc7"/>
-                                                                <constraint firstAttribute="trailing" secondItem="jDT-U9-zQX" secondAttribute="trailing" id="HbR-LB-dor"/>
+                                                                <constraint firstAttribute="trailing" secondItem="jDT-U9-zQX" secondAttribute="trailing" constant="4" id="HbR-LB-dor"/>
                                                                 <constraint firstAttribute="bottom" secondItem="gRo-XX-Nlw" secondAttribute="bottom" id="OaG-De-MKA"/>
                                                                 <constraint firstItem="jDT-U9-zQX" firstAttribute="leading" secondItem="gRo-XX-Nlw" secondAttribute="trailing" constant="4" id="SU2-yf-47b"/>
-                                                                <constraint firstItem="gRo-XX-Nlw" firstAttribute="leading" secondItem="maN-zP-6Vg" secondAttribute="leading" id="eH2-zO-8aN"/>
+                                                                <constraint firstItem="gRo-XX-Nlw" firstAttribute="leading" secondItem="maN-zP-6Vg" secondAttribute="leading" constant="4" id="eH2-zO-8aN"/>
                                                                 <constraint firstItem="gRo-XX-Nlw" firstAttribute="top" secondItem="maN-zP-6Vg" secondAttribute="top" id="el8-M9-JbH"/>
                                                                 <constraint firstItem="jDT-U9-zQX" firstAttribute="top" secondItem="maN-zP-6Vg" secondAttribute="top" id="u7l-gK-TJy"/>
                                                             </constraints>
                                                         </tableViewCellContentView>
+                                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
+                                                        <connections>
+                                                            <outlet property="placeLabel" destination="gRo-XX-Nlw" id="vUw-Ad-wyZ"/>
+                                                            <outlet property="scoreLabel" destination="jDT-U9-zQX" id="sMW-2a-eyC"/>
+                                                        </connections>
                                                     </tableViewCell>
                                                 </prototypes>
                                                 <connections>
@@ -528,9 +538,9 @@
                                             <tableView clipsSubviews="YES" tag="403" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="24" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="idU-aV-5ud">
                                                 <rect key="frame" x="2" y="72" width="136" height="122"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <color key="backgroundColor" white="1" alpha="0.69999999999999996" colorSpace="calibratedWhite"/>
                                                 <prototypes>
-                                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LocationLeaderboardCell" id="kac-tW-4Wa">
+                                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LocationLeaderboardCell" id="kac-tW-4Wa" customClass="LeaderboardTableViewCell">
                                                         <rect key="frame" x="0.0" y="22" width="136" height="24"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kac-tW-4Wa" id="uau-1q-wLp">
@@ -538,13 +548,13 @@
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1. mrobrian" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aZr-Vf-Zro">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="92" height="24"/>
+                                                                    <rect key="frame" x="4" y="0.0" width="84" height="24"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="12"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RJ0-1w-nUW">
-                                                                    <rect key="frame" x="96" y="0.0" width="40" height="24"/>
+                                                                    <rect key="frame" x="92" y="0.0" width="40" height="24"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="40" id="8U6-2D-40e"/>
@@ -556,13 +566,18 @@
                                                             <constraints>
                                                                 <constraint firstItem="aZr-Vf-Zro" firstAttribute="top" secondItem="uau-1q-wLp" secondAttribute="top" id="7yi-U7-DEq"/>
                                                                 <constraint firstAttribute="bottom" secondItem="aZr-Vf-Zro" secondAttribute="bottom" id="E63-jU-i1i"/>
-                                                                <constraint firstAttribute="trailing" secondItem="RJ0-1w-nUW" secondAttribute="trailing" id="Kkc-is-aq1"/>
-                                                                <constraint firstItem="aZr-Vf-Zro" firstAttribute="leading" secondItem="uau-1q-wLp" secondAttribute="leading" id="aH3-Ob-qN9"/>
+                                                                <constraint firstAttribute="trailing" secondItem="RJ0-1w-nUW" secondAttribute="trailing" constant="4" id="Kkc-is-aq1"/>
+                                                                <constraint firstItem="aZr-Vf-Zro" firstAttribute="leading" secondItem="uau-1q-wLp" secondAttribute="leading" constant="4" id="aH3-Ob-qN9"/>
                                                                 <constraint firstItem="RJ0-1w-nUW" firstAttribute="top" secondItem="uau-1q-wLp" secondAttribute="top" id="dho-Nz-WvA"/>
                                                                 <constraint firstAttribute="bottom" secondItem="RJ0-1w-nUW" secondAttribute="bottom" id="gaw-O3-kCm"/>
                                                                 <constraint firstItem="RJ0-1w-nUW" firstAttribute="leading" secondItem="aZr-Vf-Zro" secondAttribute="trailing" constant="4" id="pHZ-mq-chM"/>
                                                             </constraints>
                                                         </tableViewCellContentView>
+                                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
+                                                        <connections>
+                                                            <outlet property="placeLabel" destination="aZr-Vf-Zro" id="F5Y-tY-41V"/>
+                                                            <outlet property="scoreLabel" destination="RJ0-1w-nUW" id="fbZ-ln-FFe"/>
+                                                        </connections>
                                                     </tableViewCell>
                                                 </prototypes>
                                                 <connections>
@@ -677,9 +692,9 @@
                                             <tableView clipsSubviews="YES" tag="404" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="24" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Bat-o3-A0T">
                                                 <rect key="frame" x="2" y="72" width="136" height="122"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <color key="backgroundColor" white="1" alpha="0.69999999999999996" colorSpace="calibratedWhite"/>
                                                 <prototypes>
-                                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LocationLeaderboardCell" id="IGz-sI-6VV">
+                                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LocationLeaderboardCell" id="IGz-sI-6VV" customClass="LeaderboardTableViewCell">
                                                         <rect key="frame" x="0.0" y="22" width="136" height="24"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IGz-sI-6VV" id="hDp-CM-jmu">
@@ -687,13 +702,13 @@
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1. mrobrian" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fhG-e2-dxw">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="92" height="24"/>
+                                                                    <rect key="frame" x="4" y="0.0" width="84" height="24"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="12"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ISH-3Z-LGz">
-                                                                    <rect key="frame" x="96" y="0.0" width="40" height="24"/>
+                                                                    <rect key="frame" x="92" y="0.0" width="40" height="24"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="40" id="Uaf-2I-yIl"/>
@@ -703,15 +718,20 @@
                                                                 </label>
                                                             </subviews>
                                                             <constraints>
-                                                                <constraint firstItem="fhG-e2-dxw" firstAttribute="leading" secondItem="hDp-CM-jmu" secondAttribute="leading" id="8NP-V4-AI0"/>
+                                                                <constraint firstItem="fhG-e2-dxw" firstAttribute="leading" secondItem="hDp-CM-jmu" secondAttribute="leading" constant="4" id="8NP-V4-AI0"/>
                                                                 <constraint firstAttribute="bottom" secondItem="ISH-3Z-LGz" secondAttribute="bottom" id="Aks-Qx-TMV"/>
-                                                                <constraint firstAttribute="trailing" secondItem="ISH-3Z-LGz" secondAttribute="trailing" id="IMq-hm-1y1"/>
+                                                                <constraint firstAttribute="trailing" secondItem="ISH-3Z-LGz" secondAttribute="trailing" constant="4" id="IMq-hm-1y1"/>
                                                                 <constraint firstItem="ISH-3Z-LGz" firstAttribute="top" secondItem="hDp-CM-jmu" secondAttribute="top" id="WDg-J5-Xm0"/>
                                                                 <constraint firstItem="fhG-e2-dxw" firstAttribute="top" secondItem="hDp-CM-jmu" secondAttribute="top" id="a3z-gA-Ccd"/>
                                                                 <constraint firstAttribute="bottom" secondItem="fhG-e2-dxw" secondAttribute="bottom" id="hnT-FV-MQj"/>
                                                                 <constraint firstItem="ISH-3Z-LGz" firstAttribute="leading" secondItem="fhG-e2-dxw" secondAttribute="trailing" constant="4" id="qvc-Wi-V9J"/>
                                                             </constraints>
                                                         </tableViewCellContentView>
+                                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
+                                                        <connections>
+                                                            <outlet property="placeLabel" destination="fhG-e2-dxw" id="Zne-5V-HWq"/>
+                                                            <outlet property="scoreLabel" destination="ISH-3Z-LGz" id="Zng-Nr-ZnE"/>
+                                                        </connections>
                                                     </tableViewCell>
                                                 </prototypes>
                                                 <connections>
@@ -827,14 +847,22 @@
                         <outlet property="locationTitle" destination="YY0-uI-9q6" id="deX-jL-V2q"/>
                         <outlet property="locationView" destination="UTu-8T-FhX" id="ksw-xU-ikH"/>
                         <outlet property="mapView" destination="B9T-L7-aPP" id="3re-FM-gfw"/>
+                        <outlet property="p1Leaderboard" destination="ExP-GU-fef" id="vtt-j8-gau"/>
                         <outlet property="p1Medal" destination="ZL5-sa-eVh" id="tGs-Ul-guX"/>
                         <outlet property="p1Target" destination="kUM-EC-hBm" id="TW6-xX-Cxz"/>
+                        <outlet property="p1View" destination="F4y-0e-yRB" id="p47-WP-ci1"/>
+                        <outlet property="p2Leaderboard" destination="tp9-Dh-MXU" id="1aw-4R-tLA"/>
                         <outlet property="p2Medal" destination="7yk-S9-rNe" id="mBc-az-VO8"/>
                         <outlet property="p2Target" destination="71h-E0-mrL" id="Wi3-ag-MEU"/>
+                        <outlet property="p2View" destination="DO7-m0-Ttz" id="F0R-UR-kJo"/>
+                        <outlet property="p3Leaderboard" destination="idU-aV-5ud" id="AIv-re-eT4"/>
                         <outlet property="p3Medal" destination="q2Y-9m-D8C" id="FRH-zI-73I"/>
                         <outlet property="p3Target" destination="kEu-Lb-9lL" id="C4j-9S-7CH"/>
+                        <outlet property="p3View" destination="dkj-12-PY3" id="9na-B8-Ttg"/>
+                        <outlet property="p4Leaderboard" destination="Bat-o3-A0T" id="bNE-d3-6u3"/>
                         <outlet property="p4Medal" destination="n4G-SP-q2B" id="BTg-of-HvR"/>
                         <outlet property="p4Target" destination="6Oh-ps-Azn" id="WfX-o1-SCn"/>
+                        <outlet property="p4View" destination="1E7-Yn-lq2" id="SGh-Lc-3gt"/>
                         <segue destination="ZF8-Ow-7Ub" kind="modal" identifier="MapPlaySegue" id="LLh-za-UJ6"/>
                     </connections>
                 </viewController>

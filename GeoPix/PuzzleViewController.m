@@ -8,6 +8,7 @@
 
 #import "PuzzleViewController.h"
 #import "NSMutableArray_Shuffling.h"
+#import "PuzzleHelper.h"
 #import <iAd/iAd.h>
 
 @interface PuzzleViewController () {
@@ -59,7 +60,7 @@
     correctRects = [NSMutableArray arrayWithCapacity:tilesX * tilesY];
     tileOrientations = [NSMutableArray arrayWithCapacity:tilesX * tilesY];
     
-    if (CLLocationCoordinate2DIsValid(self.location)) {
+    if (CLLocationCoordinate2DIsValid(self.location) && !(self.location.latitude == 0 && self.location.longitude == 0)) {
         [flickr searchFlickrPhotosByLocation:self.location withRadius:self.radius];
     } else {
         [flickr searchFlickrPhotos:self.searchBy];
@@ -257,8 +258,16 @@
         [UIView animateWithDuration:0.5 animations:^{ self.fullImage.alpha = 1.0; }];
         [NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(showGameOverView:) userInfo:[NSNumber numberWithInt:GO_WON] repeats:NO];
         if (self.type != CUSTOM) {
+            NSTimeInterval elapsedTime = [[NSDate date] timeIntervalSinceDate:startTime];
+            NSInteger puzzleNumber = 1;
+            if (self.type == TIMED) {
+                puzzleNumber++;
+            }
+            if (self.rotation) {
+                puzzleNumber += 2;
+            }
+            [PuzzleHelper solvedPuzzleForLocation:self.locationId withNumber:puzzleNumber time:elapsedTime moves:moves];
             //TODO: report elapsedTime and moves
-//            NSTimeInterval elapsedTime = [[NSDate date] timeIntervalSinceDate:startTime];
         }
     }
 }
