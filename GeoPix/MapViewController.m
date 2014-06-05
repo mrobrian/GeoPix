@@ -11,6 +11,7 @@
 #import "PuzzleViewController.h"
 #import "Constants.h"
 #import "PuzzleHelper.h"
+#import "LocationHelper.h"
 #import "LeaderboardTableViewCell.h"
 #import <iAd/iAd.h>
 
@@ -45,12 +46,12 @@
 -(void)updateAnnotations {
     [self.mapView removeAnnotations:annotations];
     for (NSDictionary *location in locations) {
-        if ([PuzzleHelper canShowLocation:[location objectForKey:@"ID"]]) {
+        if ([LocationHelper canShowLocation:[location objectForKey:@"ID"]]) {
             MapViewAnnotation *annotation = [[MapViewAnnotation alloc] initWithLocation:location];
             [annotations addObject:annotation];
             NSArray *connections = [location objectForKey:@"Connections"];
             for (NSString *connectionId in connections) {
-                if ([PuzzleHelper canShowLocation:connectionId]) {
+                if ([LocationHelper canShowLocation:connectionId]) {
                     // TODO: Show connections overlay
                 }
             }

@@ -12,16 +12,8 @@
 @implementation PuzzleHelper
 
 static NSMutableDictionary *solvedPuzzles; // location.ID: Dictionary of puzzle number: { time, moves }
-static NSMutableArray *visibleLocations;
 
 +(void)loadData {
-    if (visibleLocations == nil) {
-        visibleLocations = [[NSUserDefaults standardUserDefaults] objectForKey:VISIBLE_LOCATIONS_KEY];
-        if (visibleLocations == nil) {
-            visibleLocations = [NSMutableArray arrayWithObject:@"SAN"];
-            [[NSUserDefaults standardUserDefaults] setObject:visibleLocations forKey:VISIBLE_LOCATIONS_KEY];
-        }
-    }
     if (solvedPuzzles == nil) {
         solvedPuzzles = [[NSUserDefaults standardUserDefaults] objectForKey:SOLVED_PUZZLES_KEY];
         if (solvedPuzzles == nil) {
@@ -31,13 +23,7 @@ static NSMutableArray *visibleLocations;
 }
 
 +(void)saveData {
-    [[NSUserDefaults standardUserDefaults] setObject:visibleLocations forKey:VISIBLE_LOCATIONS_KEY];
     [[NSUserDefaults standardUserDefaults] setObject:solvedPuzzles forKey:SOLVED_PUZZLES_KEY];
-}
-
-+(BOOL)canShowLocation:(NSString*)locationId {
-    [PuzzleHelper loadData];
-    return [visibleLocations containsObject:locationId];
 }
 
 +(NSInteger)solvedPuzzlesForLocation:(NSString*)locationId {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FF169D9319401E760079B0E0 /* LocationHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = FF169D9219401E760079B0E0 /* LocationHelper.m */; };
 		FF7A407A191E90B800289B20 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF7A4079191E90B800289B20 /* Foundation.framework */; };
 		FF7A407C191E90B800289B20 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF7A407B191E90B800289B20 /* CoreGraphics.framework */; };
 		FF7A407E191E90B800289B20 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF7A407D191E90B800289B20 /* UIKit.framework */; };
@@ -50,6 +51,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FF169D9119401E760079B0E0 /* LocationHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationHelper.h; sourceTree = "<group>"; };
+		FF169D9219401E760079B0E0 /* LocationHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationHelper.m; sourceTree = "<group>"; };
 		FF7A4076191E90B800289B20 /* GeoPix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GeoPix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF7A4079191E90B800289B20 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FF7A407B191E90B800289B20 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -244,6 +247,8 @@
 				FF7A40CF192B108B00289B20 /* Constants.m */,
 				FFEECF64193BDD140035CE18 /* PuzzleHelper.h */,
 				FFEECF65193BDD140035CE18 /* PuzzleHelper.m */,
+				FF169D9119401E760079B0E0 /* LocationHelper.h */,
+				FF169D9219401E760079B0E0 /* LocationHelper.m */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -395,6 +400,7 @@
 				FFB3FCBE1931A12100F4834A /* NSMutableArray_Shuffling.m in Sources */,
 				FFB3FCC91934112900F4834A /* LocationView.m in Sources */,
 				FF7A40B8191E98BB00289B20 /* HomeViewController.m in Sources */,
+				FF169D9319401E760079B0E0 /* LocationHelper.m in Sources */,
 				FF7A40D0192B108B00289B20 /* Constants.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

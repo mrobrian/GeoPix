@@ -10,7 +10,6 @@
 
 @interface PuzzleHelper : NSObject
 
-+(BOOL)canShowLocation:(NSString*)locationId;
 +(NSInteger)solvedPuzzlesForLocation:(NSString*)locationId;
 +(void)solvedPuzzleForLocation:(NSString*)locationId withNumber:(NSInteger)number time:(NSInteger)seconds moves:(NSInteger)moves;
 +(NSInteger)scoreForLocation:(NSString*)locationId withNumber:(NSInteger)number;

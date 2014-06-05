@@ -84,7 +84,10 @@
 			</dict>
 		</array>
 		<key>Connections</key>
-		<array/>
+		<array>
+			<string>SAN</string>
+			<string>SFO</string>
+		</array>
 	</dict>
 	<dict>
 		<key>ID</key>
@@ -125,7 +128,10 @@
 			</dict>
 		</array>
 		<key>Connections</key>
-		<array/>
+		<array>
+			<string>LAX</string>
+			<string>PDX</string>
+		</array>
 	</dict>
 	<dict>
 		<key>ID</key>
@@ -166,7 +172,10 @@
 			</dict>
 		</array>
 		<key>Connections</key>
-		<array/>
+		<array>
+			<string>SFO</string>
+			<string>SEA</string>
+		</array>
 	</dict>
 	<dict>
 		<key>ID</key>
@@ -207,7 +216,9 @@
 			</dict>
 		</array>
 		<key>Connections</key>
-		<array/>
+		<array>
+			<string>PDX</string>
+		</array>
 	</dict>
 	<dict>
 		<key>ID</key>
