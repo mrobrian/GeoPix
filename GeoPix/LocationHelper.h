@@ -11,5 +11,8 @@
 @interface LocationHelper : NSObject
 
 +(BOOL)canShowLocation:(NSString*)locationId;
++(NSArray*)visibleLocations;
++(NSDictionary*)locationWithId:(NSString*)locationId;
++(void)unlockConnectionsForLocation:(NSString*)locationId;
 
 @end

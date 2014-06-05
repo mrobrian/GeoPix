@@ -16,7 +16,6 @@
 #import <iAd/iAd.h>
 
 @interface MapViewController () {
-    NSArray *locations;
     NSMutableArray *annotations;
     NSString *locationId;
 }
@@ -31,11 +30,10 @@
     // Do any additional setup after loading the view.
     self.canDisplayBannerAds = YES;
     
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"US Cities" ofType:@"plist"];
-    locations = [NSArray arrayWithContentsOfFile:path];
     annotations = [NSMutableArray arrayWithCapacity:0];
     
-    self.mapView.centerCoordinate = CLLocationCoordinate2DMake([[locations[0] objectForKey:@"Latitude"] doubleValue], [[locations[0] objectForKey:@"Longitude"] doubleValue]);
+    NSDictionary *focusedLocation = [LocationHelper locationWithId:@"SAN"];
+    self.mapView.centerCoordinate = CLLocationCoordinate2DMake([[focusedLocation objectForKey:@"Latitude"] doubleValue], [[focusedLocation objectForKey:@"Longitude"] doubleValue]);
     self.mapView.region = MKCoordinateRegionMake(self.mapView.centerCoordinate, MKCoordinateSpanMake(15, 15));
 }
 
@@ -45,15 +43,13 @@
 
 -(void)updateAnnotations {
     [self.mapView removeAnnotations:annotations];
-    for (NSDictionary *location in locations) {
-        if ([LocationHelper canShowLocation:[location objectForKey:@"ID"]]) {
-            MapViewAnnotation *annotation = [[MapViewAnnotation alloc] initWithLocation:location];
-            [annotations addObject:annotation];
-            NSArray *connections = [location objectForKey:@"Connections"];
-            for (NSString *connectionId in connections) {
-                if ([LocationHelper canShowLocation:connectionId]) {
-                    // TODO: Show connections overlay
-                }
+    for (NSDictionary *location in [LocationHelper visibleLocations]) {
+        MapViewAnnotation *annotation = [[MapViewAnnotation alloc] initWithLocation:location];
+        [annotations addObject:annotation];
+        NSArray *connections = [location objectForKey:@"Connections"];
+        for (NSString *connectionId in connections) {
+            if ([LocationHelper canShowLocation:connectionId]) {
+                // TODO: Show connections overlay
             }
         }
     }

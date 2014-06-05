@@ -9,6 +9,7 @@
 #import "PuzzleViewController.h"
 #import "NSMutableArray_Shuffling.h"
 #import "PuzzleHelper.h"
+#import "LocationHelper.h"
 #import <iAd/iAd.h>
 
 @interface PuzzleViewController () {
@@ -267,6 +268,7 @@
                 puzzleNumber += 2;
             }
             [PuzzleHelper solvedPuzzleForLocation:self.locationId withNumber:puzzleNumber time:elapsedTime moves:moves];
+            [LocationHelper unlockConnectionsForLocation:self.locationId];
             //TODO: report elapsedTime and moves
         }
     }
