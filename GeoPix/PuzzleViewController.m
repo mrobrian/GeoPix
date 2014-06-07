@@ -140,14 +140,8 @@
     for (int i = 0; i < tilesX * tilesY; i++) {
         CGRect frame = CGRectMake((i % tilesX) * tileWidth, (i / tilesX) * tileHeight, tileWidth, tileHeight);
         [correctRects addObject:[NSValue valueWithCGRect:frame]];
+        [tileOrientations addObject:[NSNumber numberWithInteger:0]];
         UIView *tile = [[UIView alloc] initWithFrame:frame];
-        if (self.rotation) {
-            NSInteger orientation = (arc4random() % 4);
-            [tileOrientations addObject:[NSNumber numberWithInteger:orientation]];
-            tile.transform = CGAffineTransformMakeRotation(0.5 * orientation * M_PI);
-        } else {
-            [tileOrientations addObject:[NSNumber numberWithInteger:0]];
-        }
         tile.userInteractionEnabled = YES;
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tileTouchFrom:)];
         [tile addGestureRecognizer:tap];
@@ -168,6 +162,16 @@
     while ([self correctTilesCount] > (tilesX * tilesY) / 5) {
         [self shuffleTiles];
     }
+
+    if (self.rotation) {
+        for (int i = 0; i < tiles.count; i++) {
+            UIView *tile = [tiles objectAtIndex:i];
+            NSInteger orientation = (arc4random() % 4);
+            tileOrientations[i] = [NSNumber numberWithInteger:orientation];
+            tile.transform = CGAffineTransformMakeRotation(0.5 * orientation * M_PI);
+        }
+    }
+    
     [self checkTilePositions];
     self.puzzleView.userInteractionEnabled = YES;
 }
@@ -278,11 +282,23 @@
     self.puzzleView.userInteractionEnabled = NO;
     self.gameOverView.alpha = 0;
     self.gameOverView.hidden = NO;
+    self.leftMedal.hidden = YES;
+    self.rightMedal.hidden = YES;
     gameOverReason = [(NSNumber*)timer.userInfo intValue];
     switch (gameOverReason) {
         case GO_WON:
             self.gameOverLabel.text = @"You Win!";
             [self.gameOverButton setTitle:@"Ok" forState:UIControlStateNormal];
+            self.leftMedal.hidden = NO;
+            self.rightMedal.hidden = NO;
+            if (self.type == TIMED) {
+                NSTimeInterval elapsedTime = [[NSDate date] timeIntervalSinceDate:startTime];
+                self.leftMedal.image = [PuzzleHelper medalForScore:elapsedTime withTarget:self.target];
+                self.rightMedal.image = [PuzzleHelper medalForScore:elapsedTime withTarget:self.target];
+            } else {
+                self.leftMedal.image = [PuzzleHelper medalForScore:moves withTarget:self.target];
+                self.rightMedal.image = [PuzzleHelper medalForScore:moves withTarget:self.target];
+            }
             break;
         case GO_MOVES:
             self.gameOverLabel.text = @"Out of Moves";

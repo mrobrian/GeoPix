@@ -88,14 +88,22 @@
     [self updateTargetLabel:self.p2Target withPuzzle:puzzles[1] tag:2];
     [self updateTargetLabel:self.p3Target withPuzzle:puzzles[2] tag:3];
     [self updateTargetLabel:self.p4Target withPuzzle:puzzles[3] tag:4];
-    self.p1View.backgroundColor = [self colorForScore:[PuzzleHelper scoreForLocation:locationId withNumber:1]
-                                           withTarget:[[puzzles[0] objectForKey:@"Target"] integerValue]];
-    self.p2View.backgroundColor = [self colorForScore:[PuzzleHelper scoreForLocation:locationId withNumber:2]
-                                           withTarget:[[puzzles[1] objectForKey:@"Target"] integerValue]];
-    self.p3View.backgroundColor = [self colorForScore:[PuzzleHelper scoreForLocation:locationId withNumber:3]
-                                           withTarget:[[puzzles[2] objectForKey:@"Target"] integerValue]];
-    self.p4View.backgroundColor = [self colorForScore:[PuzzleHelper scoreForLocation:locationId withNumber:4]
-                                           withTarget:[[puzzles[3] objectForKey:@"Target"] integerValue]];
+    self.p1View.backgroundColor = [self backgroundColorForScore:[PuzzleHelper scoreForLocation:locationId withNumber:1]
+                                                     withTarget:[[puzzles[0] objectForKey:@"Target"] integerValue]];
+    self.p2View.backgroundColor = [self backgroundColorForScore:[PuzzleHelper scoreForLocation:locationId withNumber:2]
+                                                     withTarget:[[puzzles[1] objectForKey:@"Target"] integerValue]];
+    self.p3View.backgroundColor = [self backgroundColorForScore:[PuzzleHelper scoreForLocation:locationId withNumber:3]
+                                                     withTarget:[[puzzles[2] objectForKey:@"Target"] integerValue]];
+    self.p4View.backgroundColor = [self backgroundColorForScore:[PuzzleHelper scoreForLocation:locationId withNumber:4]
+                                                     withTarget:[[puzzles[3] objectForKey:@"Target"] integerValue]];
+    self.p1Medal.image = [PuzzleHelper medalForScore:[PuzzleHelper scoreForLocation:locationId withNumber:1]
+                                  withTarget:[[puzzles[0] objectForKey:@"Target"] integerValue]];
+    self.p2Medal.image = [PuzzleHelper medalForScore:[PuzzleHelper scoreForLocation:locationId withNumber:2]
+                                  withTarget:[[puzzles[1] objectForKey:@"Target"] integerValue]];
+    self.p3Medal.image = [PuzzleHelper medalForScore:[PuzzleHelper scoreForLocation:locationId withNumber:3]
+                                  withTarget:[[puzzles[2] objectForKey:@"Target"] integerValue]];
+    self.p4Medal.image = [PuzzleHelper medalForScore:[PuzzleHelper scoreForLocation:locationId withNumber:4]
+                                  withTarget:[[puzzles[3] objectForKey:@"Target"] integerValue]];
     [self.p1Leaderboard reloadData];
     [self.p2Leaderboard reloadData];
     [self.p3Leaderboard reloadData];
@@ -106,18 +114,18 @@
     }];
 }
 
--(UIColor*)colorForScore:(NSInteger)score withTarget:(NSInteger)target {
+-(UIColor*)backgroundColorForScore:(NSInteger)score withTarget:(NSInteger)target {
     UIColor *color;
     
     if (score == 0) {
-        color = [UIColor lightGrayColor];
+        color = [UIColor whiteColor];
     } else {
         if (score <= target / 2) { // Gold (255, 215, 0)
-            color = [UIColor colorWithRed:1.0 green:0.84 blue:0.0 alpha:1.0];
+            color = [UIColor colorWithRed:1.0 green:0.84 blue:0.0 alpha:0.6];
         } else if (score <= (3 * target) / 4) { // Silver (192, 192, 192)
-            color = [UIColor colorWithRed:0.75 green:0.75 blue:0.75 alpha:1.0];
+            color = [UIColor colorWithRed:0.75 green:0.75 blue:0.75 alpha:0.6];
         } else { // Bronze (205, 127, 50)
-            color = [UIColor colorWithRed:0.8 green:0.5 blue:0.2 alpha:1.0];
+            color = [UIColor colorWithRed:0.8 green:0.5 blue:0.2 alpha:0.6];
         }
     }
     return color;

@@ -192,10 +192,16 @@
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Timed" translatesAutoresizingMaskIntoConstraints="NO" id="qoc-48-jFB">
                                                 <rect key="frame" x="2" y="2" width="16" height="16"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="16" id="bVP-mF-5aP"/>
                                                     <constraint firstAttribute="width" constant="16" id="kuF-ol-htv"/>
                                                 </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="8"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NewLocation" translatesAutoresizingMaskIntoConstraints="NO" id="ZL5-sa-eVh">
                                                 <rect key="frame" x="118" y="2" width="20" height="20"/>
@@ -328,10 +334,16 @@
                                             </label>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Timed" translatesAutoresizingMaskIntoConstraints="NO" id="htb-RV-x6R">
                                                 <rect key="frame" x="2" y="2" width="16" height="16"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="16" id="O4O-M6-Ipx"/>
                                                     <constraint firstAttribute="width" constant="16" id="VeN-8A-46g"/>
                                                 </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="8"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NewLocation" translatesAutoresizingMaskIntoConstraints="NO" id="7yk-S9-rNe">
                                                 <rect key="frame" x="118" y="2" width="20" height="20"/>
@@ -464,17 +476,29 @@
                                             </label>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Timed" translatesAutoresizingMaskIntoConstraints="NO" id="yWM-jn-Bpi">
                                                 <rect key="frame" x="2" y="2" width="16" height="16"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="16" id="VS9-qE-5UF"/>
                                                     <constraint firstAttribute="width" constant="16" id="gU7-6T-mBi"/>
                                                 </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="8"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rotating" translatesAutoresizingMaskIntoConstraints="NO" id="ljp-Zk-vjv">
                                                 <rect key="frame" x="22" y="2" width="16" height="16"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="16" id="EsL-3s-cJm"/>
                                                     <constraint firstAttribute="height" constant="16" id="hdW-hA-4Ga"/>
                                                 </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="8"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NewLocation" translatesAutoresizingMaskIntoConstraints="NO" id="q2Y-9m-D8C">
                                                 <rect key="frame" x="118" y="2" width="20" height="20"/>
@@ -607,17 +631,29 @@
                                             </label>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Timed" translatesAutoresizingMaskIntoConstraints="NO" id="hIe-5K-wpz">
                                                 <rect key="frame" x="2" y="2" width="16" height="16"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="16" id="0b5-LR-Omz"/>
                                                     <constraint firstAttribute="height" constant="16" id="PgG-lc-Ngm"/>
                                                 </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="8"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rotating" translatesAutoresizingMaskIntoConstraints="NO" id="Aob-uW-fdE">
                                                 <rect key="frame" x="22" y="2" width="16" height="16"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="16" id="RXe-DJ-ryy"/>
                                                     <constraint firstAttribute="height" constant="16" id="bBH-dl-nKF"/>
                                                 </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="8"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NewLocation" translatesAutoresizingMaskIntoConstraints="NO" id="n4G-SP-q2B">
                                                 <rect key="frame" x="118" y="2" width="20" height="20"/>
@@ -746,6 +782,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="1E7-Yn-lq2" secondAttribute="trailing" id="0fl-Cq-1xO"/>
                                     <constraint firstAttribute="trailing" secondItem="YY0-uI-9q6" secondAttribute="trailing" id="2lB-D6-iLM"/>
@@ -911,7 +948,7 @@
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AZB-Wm-6WO">
                                 <rect key="frame" x="0.0" y="235" width="319" height="100"/>
                                 <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Out of Moves" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="30" translatesAutoresizingMaskIntoConstraints="NO" id="NmE-RR-M73">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You Win!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="30" translatesAutoresizingMaskIntoConstraints="NO" id="NmE-RR-M73">
                                         <rect key="frame" x="0.0" y="0.0" width="319" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="Epw-uT-Tcl"/>
@@ -921,6 +958,10 @@
                                         <nil key="highlightedColor"/>
                                         <size key="shadowOffset" width="0.0" height="0.0"/>
                                     </label>
+                                    <imageView hidden="YES" appearanceType="aqua" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A9g-yW-o2W">
+                                        <rect key="frame" x="237" y="13" width="24" height="24"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9mX-WS-WBy">
                                         <rect key="frame" x="100" y="56" width="120" height="34"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -941,6 +982,10 @@
                                             <action selector="gameOverButton:" destination="ZF8-Ow-7Ub" eventType="touchUpInside" id="LB5-3G-FyU"/>
                                         </connections>
                                     </button>
+                                    <imageView hidden="YES" appearanceType="aqua" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mHh-yE-3Dz">
+                                        <rect key="frame" x="62" y="13" width="24" height="24"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.66000000000000003" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -981,10 +1026,12 @@
                         <outlet property="gameOverButton" destination="9mX-WS-WBy" id="Ayw-jF-6Ah"/>
                         <outlet property="gameOverLabel" destination="NmE-RR-M73" id="h9n-lJ-458"/>
                         <outlet property="gameOverView" destination="AZB-Wm-6WO" id="9N9-ao-bes"/>
+                        <outlet property="leftMedal" destination="mHh-yE-3Dz" id="GWH-b1-bTp"/>
                         <outlet property="loadingLabel" destination="Ahw-hp-tkl" id="vYo-Ek-NHd"/>
                         <outlet property="loadingSpinner" destination="0Gl-Ry-T67" id="RZA-rk-CDJ"/>
                         <outlet property="movesLabel" destination="irQ-WC-wtE" id="7PD-Ok-69B"/>
                         <outlet property="puzzleView" destination="ZGS-Ge-AQ3" id="1vo-P8-qOo"/>
+                        <outlet property="rightMedal" destination="A9g-yW-o2W" id="umk-av-1a7"/>
                         <outlet property="targetLabel" destination="bgt-8E-Dbb" id="ZdH-Sz-Fqg"/>
                         <outlet property="timerLabel" destination="LiF-4l-rnT" id="qbb-1E-cz7"/>
                     </connections>

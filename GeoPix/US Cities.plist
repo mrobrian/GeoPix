@@ -25,7 +25,7 @@
 				<key>Difficulty</key>
 				<integer>0</integer>
 				<key>Target</key>
-				<integer>45</integer>
+				<integer>40</integer>
 			</dict>
 			<dict>
 				<key>Difficulty</key>
@@ -37,7 +37,7 @@
 				<key>Difficulty</key>
 				<integer>0</integer>
 				<key>Target</key>
-				<integer>90</integer>
+				<integer>75</integer>
 			</dict>
 		</array>
 		<key>Connections</key>
@@ -62,7 +62,7 @@
 				<key>Difficulty</key>
 				<integer>1</integer>
 				<key>Target</key>
-				<integer>25</integer>
+				<integer>30</integer>
 			</dict>
 			<dict>
 				<key>Difficulty</key>
@@ -74,7 +74,7 @@
 				<key>Difficulty</key>
 				<integer>1</integer>
 				<key>Target</key>
-				<integer>25</integer>
+				<integer>30</integer>
 			</dict>
 			<dict>
 				<key>Difficulty</key>

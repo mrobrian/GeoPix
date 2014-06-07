@@ -65,6 +65,7 @@ static NSMutableDictionary *locationHash;
             [visibleLocations addObject:connection];
         }
     }
+    [LocationHelper saveData];
 }
 
 @end

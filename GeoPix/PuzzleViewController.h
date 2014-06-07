@@ -33,6 +33,8 @@
 @property (weak, nonatomic) IBOutlet UIView *gameOverView;
 @property (weak, nonatomic) IBOutlet UILabel *gameOverLabel;
 @property (weak, nonatomic) IBOutlet UIButton *gameOverButton;
+@property (weak, nonatomic) IBOutlet UIImageView *leftMedal;
+@property (weak, nonatomic) IBOutlet UIImageView *rightMedal;
 
 - (IBAction)back:(id)sender;
 - (IBAction)gameOverButton:(id)sender;

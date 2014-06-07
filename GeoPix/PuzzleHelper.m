@@ -77,4 +77,22 @@ static NSMutableDictionary *solvedPuzzles; // location.ID: Dictionary of puzzle 
     return 0;
 }
 
++(UIImage*)medalForScore:(NSInteger)score withTarget:(NSInteger)target {
+    UIImage *image;
+    
+    if (score == 0) {
+        image = [UIImage imageNamed:@"NewLocation"];
+    } else {
+        if (score <= target / 2) {
+            image = [UIImage imageNamed:@"Gold Star"];
+        } else if (score <= (3 * target) / 4) {
+            image = [UIImage imageNamed:@"Silver Star"];
+        } else {
+            image = [UIImage imageNamed:@"Bronze Star"];
+        }
+    }
+    
+    return image;
+}
+
 @end

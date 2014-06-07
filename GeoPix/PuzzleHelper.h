@@ -13,5 +13,6 @@
 +(NSInteger)solvedPuzzlesForLocation:(NSString*)locationId;
 +(void)solvedPuzzleForLocation:(NSString*)locationId withNumber:(NSInteger)number time:(NSInteger)seconds moves:(NSInteger)moves;
 +(NSInteger)scoreForLocation:(NSString*)locationId withNumber:(NSInteger)number;
++(UIImage*)medalForScore:(NSInteger)score withTarget:(NSInteger)target;
 
 @end
