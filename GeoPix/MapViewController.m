@@ -81,7 +81,7 @@
     } else {
         NSArray *puzzles = [((MapViewAnnotation*)annotation).location objectForKey:@"Puzzles"];
 
-        UIGraphicsBeginImageContext(CGSizeMake(24.0, 24.0));
+        UIGraphicsBeginImageContextWithOptions(CGSizeMake(24, 24), NO, 2.0);
         [[PuzzleHelper medalForScore:[PuzzleHelper scoreForLocation:locId withNumber:1]
                          withTarget:[[puzzles[0] objectForKey:@"Target"] integerValue]]
          drawInRect:CGRectMake(0, 0, 12, 12)];
