@@ -31,14 +31,23 @@
     self.canDisplayBannerAds = YES;
     
     annotations = [NSMutableArray arrayWithCapacity:0];
-    
-    NSDictionary *focusedLocation = [LocationHelper locationWithId:@"SAN"];
-    self.mapView.centerCoordinate = CLLocationCoordinate2DMake([[focusedLocation objectForKey:@"Latitude"] doubleValue], [[focusedLocation objectForKey:@"Longitude"] doubleValue]);
-    self.mapView.region = MKCoordinateRegionMake(self.mapView.centerCoordinate, MKCoordinateSpanMake(15, 15));
 }
 
 -(void)viewDidAppear:(BOOL)animated {
     [self updateAnnotations];
+    
+    NSDictionary *focusedLocation = [[NSUserDefaults standardUserDefaults] objectForKey:LAST_LOCATION_KEY];
+    if (focusedLocation == nil) {
+        focusedLocation = [LocationHelper locationWithId:@"SAN"];
+    }
+    [self focusLocation:focusedLocation];
+}
+
+-(void)focusLocation:(NSDictionary*)location {
+    self.mapView.centerCoordinate = CLLocationCoordinate2DMake([[location objectForKey:@"Latitude"] doubleValue],
+                                                               [[location objectForKey:@"Longitude"] doubleValue]);
+    self.mapView.region = MKCoordinateRegionMake(self.mapView.centerCoordinate, MKCoordinateSpanMake(15, 15));
+    [[NSUserDefaults standardUserDefaults] setObject:location forKey:LAST_LOCATION_KEY];
 }
 
 -(void)updateAnnotations {
@@ -58,15 +67,37 @@
 
 -(MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
     MKAnnotationView *annotationView;
+    NSString *locId = [((MapViewAnnotation*)annotation).location objectForKey:@"ID"];
     
     annotationView = [mapView dequeueReusableAnnotationViewWithIdentifier:@"location_annotation"];
     if (annotationView == nil) {
         annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"location_annotation"];
     }
     annotationView.canShowCallout = NO;
-    annotationView.image = [UIImage imageNamed:@"NewLocation"];
     annotationView.backgroundColor = [UIColor blackColor];
-    annotationView.layer.cornerRadius = 12.0f;
+    if ([PuzzleHelper solvedPuzzlesForLocation:locId] == 0) {
+        annotationView.image = [UIImage imageNamed:@"NewLocation"];
+        annotationView.layer.cornerRadius = 12.0f;
+    } else {
+        NSArray *puzzles = [((MapViewAnnotation*)annotation).location objectForKey:@"Puzzles"];
+
+        UIGraphicsBeginImageContext(CGSizeMake(24.0, 24.0));
+        [[PuzzleHelper medalForScore:[PuzzleHelper scoreForLocation:locId withNumber:1]
+                         withTarget:[[puzzles[0] objectForKey:@"Target"] integerValue]]
+         drawInRect:CGRectMake(0, 0, 12, 12)];
+        [[PuzzleHelper medalForScore:[PuzzleHelper scoreForLocation:locId withNumber:2]
+                          withTarget:[[puzzles[1] objectForKey:@"Target"] integerValue]]
+         drawInRect:CGRectMake(12, 0, 12, 12)];
+        [[PuzzleHelper medalForScore:[PuzzleHelper scoreForLocation:locId withNumber:3]
+                          withTarget:[[puzzles[2] objectForKey:@"Target"] integerValue]]
+         drawInRect:CGRectMake(0, 12, 12, 12)];
+        [[PuzzleHelper medalForScore:[PuzzleHelper scoreForLocation:locId withNumber:4]
+                          withTarget:[[puzzles[3] objectForKey:@"Target"] integerValue]]
+         drawInRect:CGRectMake(12, 12, 12, 12)];
+        annotationView.image = UIGraphicsGetImageFromCurrentImageContext();
+        annotationView.layer.cornerRadius = 6.0f;
+        UIGraphicsEndImageContext();
+    }
     
     return annotationView;
 }
@@ -82,6 +113,7 @@
     self.locationView.alpha = 0.0;
     self.locationView.hidden = NO;
     locationId = [annotation.location objectForKey:@"ID"];
+    [self focusLocation:annotation.location];
     
     NSArray *puzzles = [annotation.location objectForKey:@"Puzzles"];
     [self updateTargetLabel:self.p1Target withPuzzle:puzzles[0] tag:1];

@@ -11,3 +11,4 @@
 NSString *DIFFICULTY_KEY = @"difficulty_setting";
 NSString *VISIBLE_LOCATIONS_KEY = @"visible_locations";
 NSString *SOLVED_PUZZLES_KEY = @"solved_puzzles";
+NSString *LAST_LOCATION_KEY = @"last_location";

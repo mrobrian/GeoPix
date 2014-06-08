@@ -192,7 +192,7 @@
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Timed" translatesAutoresizingMaskIntoConstraints="NO" id="qoc-48-jFB">
                                                 <rect key="frame" x="2" y="2" width="16" height="16"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="16" id="bVP-mF-5aP"/>
                                                     <constraint firstAttribute="width" constant="16" id="kuF-ol-htv"/>
@@ -334,7 +334,7 @@
                                             </label>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Timed" translatesAutoresizingMaskIntoConstraints="NO" id="htb-RV-x6R">
                                                 <rect key="frame" x="2" y="2" width="16" height="16"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="16" id="O4O-M6-Ipx"/>
                                                     <constraint firstAttribute="width" constant="16" id="VeN-8A-46g"/>
@@ -476,7 +476,7 @@
                                             </label>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Timed" translatesAutoresizingMaskIntoConstraints="NO" id="yWM-jn-Bpi">
                                                 <rect key="frame" x="2" y="2" width="16" height="16"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="16" id="VS9-qE-5UF"/>
                                                     <constraint firstAttribute="width" constant="16" id="gU7-6T-mBi"/>
@@ -489,7 +489,7 @@
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rotating" translatesAutoresizingMaskIntoConstraints="NO" id="ljp-Zk-vjv">
                                                 <rect key="frame" x="22" y="2" width="16" height="16"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="16" id="EsL-3s-cJm"/>
                                                     <constraint firstAttribute="height" constant="16" id="hdW-hA-4Ga"/>
@@ -631,7 +631,7 @@
                                             </label>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Timed" translatesAutoresizingMaskIntoConstraints="NO" id="hIe-5K-wpz">
                                                 <rect key="frame" x="2" y="2" width="16" height="16"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="16" id="0b5-LR-Omz"/>
                                                     <constraint firstAttribute="height" constant="16" id="PgG-lc-Ngm"/>
@@ -644,7 +644,7 @@
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rotating" translatesAutoresizingMaskIntoConstraints="NO" id="Aob-uW-fdE">
                                                 <rect key="frame" x="22" y="2" width="16" height="16"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="16" id="RXe-DJ-ryy"/>
                                                     <constraint firstAttribute="height" constant="16" id="bBH-dl-nKF"/>

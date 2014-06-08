@@ -9,6 +9,7 @@
 extern NSString *DIFFICULTY_KEY;
 extern NSString *VISIBLE_LOCATIONS_KEY;
 extern NSString *SOLVED_PUZZLES_KEY;
+extern NSString *LAST_LOCATION_KEY;
 
 typedef NS_ENUM(int, PUZZLE_TYPE) {
     CUSTOM,
