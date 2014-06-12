@@ -11,6 +11,11 @@ extern NSString *VISIBLE_LOCATIONS_KEY;
 extern NSString *SOLVED_PUZZLES_KEY;
 extern NSString *LAST_LOCATION_KEY;
 
+extern NSInteger MAX_ENERGY;
+extern NSInteger ENERGY_INTERVAL;
+extern NSString *ENERGY_TIMER_START_KEY;
+extern NSString *CURRENT_ENERGY_KEY;
+
 typedef NS_ENUM(int, PUZZLE_TYPE) {
     CUSTOM,
     TIMED,
