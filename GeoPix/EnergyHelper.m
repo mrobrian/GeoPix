@@ -71,11 +71,10 @@ NSTimer *_timer;
         if (_timerStart == nil) {
             _timerStart = [NSDate date];
         }
-        _timer = [NSTimer timerWithTimeInterval:[EnergyHelper nextEnergy]
-                                         target:self
-                                       selector:@selector(incrementEnergy)
-                                       userInfo:nil
-                                        repeats:NO];
+        _timer = [NSTimer scheduledTimerWithTimeInterval:[EnergyHelper nextEnergy]
+                                                  target:self
+                                                selector:@selector(incrementEnergy)
+                                                userInfo:nil repeats:NO];
     } else {
         _timerStart = nil;
     }
@@ -85,6 +84,7 @@ NSTimer *_timer;
 +(void)incrementEnergy {
     _currentEnergy++;
     _timer = nil;
+    _timerStart = nil;
     [EnergyHelper startTimer];
 }
 

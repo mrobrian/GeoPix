@@ -172,12 +172,11 @@
                                             </label>
                                             <button opaque="NO" tag="501" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tF9-M2-J0T">
                                                 <rect key="frame" x="20" y="182" width="100" height="30"/>
-                                                <color key="backgroundColor" red="0.1401192952699952" green="0.74160953443877553" blue="0.10696359241782739" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="100" id="bd4-Xm-GkD"/>
                                                     <constraint firstAttribute="height" constant="30" id="nZj-oU-Yso"/>
                                                 </constraints>
-                                                <size key="titleShadowOffset" width="1" height="1"/>
                                                 <state key="normal" title="Play">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -305,12 +304,11 @@
                                         <subviews>
                                             <button opaque="NO" tag="502" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sie-Yy-mp8">
                                                 <rect key="frame" x="20" y="182" width="100" height="30"/>
-                                                <color key="backgroundColor" red="0.1401192953" green="0.74160953439999999" blue="0.1069635924" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="duh-hi-MMN"/>
                                                     <constraint firstAttribute="width" constant="100" id="ezY-4f-ziI"/>
                                                 </constraints>
-                                                <size key="titleShadowOffset" width="1" height="1"/>
                                                 <state key="normal" title="Play">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -447,12 +445,11 @@
                                         <subviews>
                                             <button opaque="NO" tag="503" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="arV-Km-w40">
                                                 <rect key="frame" x="20" y="182" width="100" height="30"/>
-                                                <color key="backgroundColor" red="0.1401192953" green="0.74160953439999999" blue="0.1069635924" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="IsO-Bc-zJy"/>
                                                     <constraint firstAttribute="width" constant="100" id="M1a-wa-tQQ"/>
                                                 </constraints>
-                                                <size key="titleShadowOffset" width="1" height="1"/>
                                                 <state key="normal" title="Play">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -604,12 +601,11 @@
                                         <subviews>
                                             <button opaque="NO" tag="504" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bUh-it-QXe">
                                                 <rect key="frame" x="20" y="182" width="100" height="30"/>
-                                                <color key="backgroundColor" red="0.1401192953" green="0.74160953439999999" blue="0.1069635924" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="100" id="QtH-0a-9SO"/>
                                                     <constraint firstAttribute="height" constant="30" id="syZ-i8-RJl"/>
                                                 </constraints>
-                                                <size key="titleShadowOffset" width="1" height="1"/>
                                                 <state key="normal" title="Play"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
