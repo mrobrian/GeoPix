@@ -12,5 +12,7 @@
 
 +(BOOL)useEnergy:(NSInteger)amount;
 +(BOOL)hasEnergy;
++(NSTimeInterval)nextEnergy;
++(NSInteger)currentEnergy;
 
 @end

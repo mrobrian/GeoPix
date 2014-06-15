@@ -31,6 +31,8 @@
 @property (weak, nonatomic) IBOutlet UITableView *p2Leaderboard;
 @property (weak, nonatomic) IBOutlet UITableView *p3Leaderboard;
 @property (weak, nonatomic) IBOutlet UITableView *p4Leaderboard;
+@property (weak, nonatomic) IBOutlet UILabel *energy;
+@property (weak, nonatomic) IBOutlet UILabel *nextEnergy;
 
 - (IBAction)hideLocationView:(id)sender;
 - (IBAction)playPuzzle:(id)sender;

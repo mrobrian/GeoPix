@@ -11,12 +11,12 @@
 
 @implementation EnergyHelper
 
-NSInteger _currentEnergy;
+NSInteger _currentEnergy = -1;
 NSDate *_timerStart;
 NSTimer *_timer;
 
 +(NSInteger)currentEnergy {
-    if (!_currentEnergy) {
+    if (_currentEnergy == -1) {
         id energy = [[NSUserDefaults standardUserDefaults] objectForKey:CURRENT_ENERGY_KEY];
         if (energy == nil) {
             _currentEnergy = MAX_ENERGY;
@@ -56,6 +56,9 @@ NSTimer *_timer;
 }
 
 +(NSTimeInterval)nextEnergy {
+    if (_timerStart == nil) {
+        return -1;
+    }
     return ENERGY_INTERVAL - [[NSDate date] timeIntervalSinceDate:_timerStart];
 }
 

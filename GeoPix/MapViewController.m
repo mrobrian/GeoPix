@@ -13,11 +13,13 @@
 #import "PuzzleHelper.h"
 #import "LocationHelper.h"
 #import "LeaderboardTableViewCell.h"
+#import "EnergyHelper.h"
 #import <iAd/iAd.h>
 
 @interface MapViewController () {
     NSMutableArray *annotations;
     NSString *locationId;
+    NSTimer *energyTimer;
 }
 
 @end
@@ -41,6 +43,27 @@
         focusedLocation = [LocationHelper locationWithId:@"SAN"];
     }
     [self focusLocation:focusedLocation];
+    
+    energyTimer = [NSTimer scheduledTimerWithTimeInterval:0.2 target:self selector:@selector(updateEnergy) userInfo:nil repeats:YES];
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    [self updateEnergy];
+}
+
+-(void)viewWillDisappear:(BOOL)animated {
+    [energyTimer invalidate];
+}
+
+-(void)updateEnergy {
+    self.energy.text = [NSString stringWithFormat:@"Energy: %ld", (long)[EnergyHelper currentEnergy]];
+    NSTimeInterval nextEnergy = [EnergyHelper nextEnergy];
+    if (nextEnergy == -1) {
+        self.nextEnergy.hidden = YES;
+    } else {
+        self.nextEnergy.hidden = NO;
+        self.nextEnergy.text = [NSString stringWithFormat:@"Next: %02lu:%02lu", ((long)nextEnergy / 60), ((long)nextEnergy % 60)];
+    }
 }
 
 -(void)focusLocation:(NSDictionary*)location {
@@ -188,6 +211,7 @@
         pvc.locationId = locationId;
         pvc.radius = [[annotation.location objectForKey:@"Radius"] intValue];
         pvc.type = tag % 2 == 0 ? TIMED : MOVES;
+        [EnergyHelper useEnergy:1];
     }
     
 }
@@ -202,9 +226,14 @@
 }
 
 - (IBAction)playPuzzle:(id)sender {
-    MapViewAnnotation *annotation = (MapViewAnnotation*)self.mapView.selectedAnnotations[0];
-    [self performSegueWithIdentifier:@"MapPlaySegue" sender:@{ @"annotation": annotation, @"tag": [NSNumber numberWithInteger:((UIView*)sender).tag] }];
-    self.locationView.hidden = YES;
+    if ([EnergyHelper hasEnergy]) {
+        MapViewAnnotation *annotation = (MapViewAnnotation*)self.mapView.selectedAnnotations[0];
+        [self performSegueWithIdentifier:@"MapPlaySegue" sender:@{ @"annotation": annotation, @"tag": [NSNumber numberWithInteger:((UIView*)sender).tag] }];
+        self.locationView.hidden = YES;
+    } else {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Out of Energy" message:@"You have run out of Energy. Please wait for your energy to refill." delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+        [alert show];
+    }
 }
 
 - (IBAction)goBack:(id)sender {
