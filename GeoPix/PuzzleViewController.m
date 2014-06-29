@@ -55,7 +55,7 @@
     self.loadingLabel.hidden = NO;
     self.loadingSpinner.hidden = NO;
 
-    tilesX = 2 * pow(2, self.difficulty);
+    tilesX = 2 + (2 * self.difficulty);
     tilesY = (tilesX / 2) * 3;
     tiles = [NSMutableArray arrayWithCapacity:tilesX * tilesY];
     correctRects = [NSMutableArray arrayWithCapacity:tilesX * tilesY];

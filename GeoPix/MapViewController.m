@@ -75,13 +75,19 @@
 
 -(void)updateAnnotations {
     [self.mapView removeAnnotations:annotations];
+
     for (NSDictionary *location in [LocationHelper visibleLocations]) {
         MapViewAnnotation *annotation = [[MapViewAnnotation alloc] initWithLocation:location];
         [annotations addObject:annotation];
         NSArray *connections = [location objectForKey:@"Connections"];
         for (NSString *connectionId in connections) {
             if ([LocationHelper canShowLocation:connectionId]) {
-                // TODO: Show connections overlay
+                CLLocationCoordinate2D *coordinates = malloc(sizeof(CLLocationCoordinate2D) * 2);
+                coordinates[0] = [[MapViewAnnotation alloc] initWithLocation:[LocationHelper locationWithId:connectionId]].coordinate;
+                coordinates[1] = annotation.coordinate;
+                MKPolyline *polyline = [MKPolyline polylineWithCoordinates:coordinates count:2];
+                free(coordinates);
+                [self.mapView addOverlay:polyline];
             }
         }
     }
@@ -124,10 +130,14 @@
     
     return annotationView;
 }
-//
-//-(MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay {
-//    
-//}
+
+-(MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay {
+    MKPolylineRenderer *line = [[MKPolylineRenderer alloc] initWithPolyline:overlay];
+    line.strokeColor = [UIColor blackColor];
+    line.lineWidth = 1.0f;
+    
+    return line;
+}
 
 -(void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view {
     // Show information for selected location

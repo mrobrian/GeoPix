@@ -8,9 +8,9 @@
 		<key>Name</key>
 		<string>San Diego</string>
 		<key>Latitude</key>
-		<real>32.7</real>
+		<real>32.73</real>
 		<key>Longitude</key>
-		<real>-117.15</real>
+		<real>-117.17</real>
 		<key>Radius</key>
 		<integer>10</integer>
 		<key>Puzzles</key>
@@ -43,6 +43,7 @@
 		<key>Connections</key>
 		<array>
 			<string>LAX</string>
+			<string>TUS</string>
 		</array>
 	</dict>
 	<dict>
@@ -87,6 +88,7 @@
 		<array>
 			<string>SAN</string>
 			<string>SFO</string>
+			<string>LAS</string>
 		</array>
 	</dict>
 	<dict>
@@ -131,6 +133,7 @@
 		<array>
 			<string>LAX</string>
 			<string>PDX</string>
+			<string>JHM</string>
 		</array>
 	</dict>
 	<dict>
@@ -156,7 +159,7 @@
 				<key>Difficulty</key>
 				<integer>0</integer>
 				<key>Target</key>
-				<integer>30</integer>
+				<integer>25</integer>
 			</dict>
 			<dict>
 				<key>Difficulty</key>
@@ -168,13 +171,14 @@
 				<key>Difficulty</key>
 				<integer>0</integer>
 				<key>Target</key>
-				<integer>45</integer>
+				<integer>30</integer>
 			</dict>
 		</array>
 		<key>Connections</key>
 		<array>
 			<string>SFO</string>
 			<string>SEA</string>
+			<string>BZN</string>
 		</array>
 	</dict>
 	<dict>
@@ -218,40 +222,62 @@
 		<key>Connections</key>
 		<array>
 			<string>PDX</string>
+			<string>ANC</string>
 		</array>
 	</dict>
 	<dict>
 		<key>ID</key>
-		<string>SAN5</string>
+		<string>LAS</string>
 		<key>Name</key>
 		<string>Las Vegas</string>
 		<key>Latitude</key>
-		<integer>0</integer>
+		<real>36.1667</real>
 		<key>Longitude</key>
-		<integer>0</integer>
+		<real>-115.2</real>
 		<key>Radius</key>
 		<integer>10</integer>
 		<key>Puzzles</key>
 		<array>
 			<dict>
 				<key>Difficulty</key>
-				<integer>0</integer>
+				<integer>2</integer>
 				<key>Target</key>
-				<integer>0</integer>
+				<integer>55</integer>
+			</dict>
+			<dict>
+				<key>Difficulty</key>
+				<integer>2</integer>
+				<key>Target</key>
+				<integer>240</integer>
+			</dict>
+			<dict>
+				<key>Difficulty</key>
+				<integer>2</integer>
+				<key>Target</key>
+				<integer>55</integer>
+			</dict>
+			<dict>
+				<key>Difficulty</key>
+				<integer>2</integer>
+				<key>Target</key>
+				<integer>330</integer>
 			</dict>
 		</array>
 		<key>Connections</key>
-		<array/>
+		<array>
+			<string>LAX</string>
+			<string>PVU</string>
+		</array>
 	</dict>
 	<dict>
 		<key>ID</key>
-		<string>SAN6</string>
+		<string>TUS</string>
 		<key>Name</key>
 		<string>Tucson</string>
 		<key>Latitude</key>
-		<integer>0</integer>
+		<real>32.12</real>
 		<key>Longitude</key>
-		<integer>0</integer>
+		<real>-110.93</real>
 		<key>Radius</key>
 		<integer>10</integer>
 		<key>Puzzles</key>
@@ -260,67 +286,132 @@
 				<key>Difficulty</key>
 				<integer>0</integer>
 				<key>Target</key>
+				<integer>8</integer>
+			</dict>
+			<dict>
+				<key>Difficulty</key>
 				<integer>0</integer>
+				<key>Target</key>
+				<integer>35</integer>
+			</dict>
+			<dict>
+				<key>Difficulty</key>
+				<integer>0</integer>
+				<key>Target</key>
+				<integer>8</integer>
+			</dict>
+			<dict>
+				<key>Difficulty</key>
+				<integer>0</integer>
+				<key>Target</key>
+				<integer>60</integer>
 			</dict>
 		</array>
 		<key>Connections</key>
-		<array/>
+		<array>
+			<string>SAN</string>
+			<string>ABQ</string>
+		</array>
 	</dict>
 	<dict>
 		<key>ID</key>
-		<string>SAN7</string>
+		<string>ABQ</string>
 		<key>Name</key>
 		<string>Albuquerque</string>
 		<key>Latitude</key>
-		<integer>0</integer>
+		<real>35.05</real>
 		<key>Longitude</key>
-		<integer>0</integer>
+		<real>-106.6</real>
 		<key>Radius</key>
 		<integer>10</integer>
 		<key>Puzzles</key>
 		<array>
 			<dict>
 				<key>Difficulty</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>Target</key>
-				<integer>0</integer>
+				<integer>15</integer>
+			</dict>
+			<dict>
+				<key>Difficulty</key>
+				<integer>1</integer>
+				<key>Target</key>
+				<integer>75</integer>
+			</dict>
+			<dict>
+				<key>Difficulty</key>
+				<integer>1</integer>
+				<key>Target</key>
+				<integer>15</integer>
+			</dict>
+			<dict>
+				<key>Difficulty</key>
+				<integer>1</integer>
+				<key>Target</key>
+				<integer>90</integer>
 			</dict>
 		</array>
 		<key>Connections</key>
-		<array/>
+		<array>
+			<string>TUS</string>
+			<string>ASE</string>
+			<string>DFW</string>
+		</array>
 	</dict>
 	<dict>
 		<key>ID</key>
-		<string>SAN8</string>
+		<string>ASE</string>
 		<key>Name</key>
-		<string>Boulder</string>
+		<string>Aspen</string>
 		<key>Latitude</key>
-		<integer>0</integer>
+		<real>39.22</real>
 		<key>Longitude</key>
-		<integer>0</integer>
+		<real>-106.87</real>
 		<key>Radius</key>
 		<integer>10</integer>
 		<key>Puzzles</key>
 		<array>
 			<dict>
 				<key>Difficulty</key>
-				<integer>0</integer>
+				<integer>2</integer>
 				<key>Target</key>
-				<integer>0</integer>
+				<integer>65</integer>
+			</dict>
+			<dict>
+				<key>Difficulty</key>
+				<integer>2</integer>
+				<key>Target</key>
+				<integer>270</integer>
+			</dict>
+			<dict>
+				<key>Difficulty</key>
+				<integer>2</integer>
+				<key>Target</key>
+				<integer>65</integer>
+			</dict>
+			<dict>
+				<key>Difficulty</key>
+				<integer>2</integer>
+				<key>Target</key>
+				<integer>390</integer>
 			</dict>
 		</array>
 		<key>Connections</key>
-		<array/>
+		<array>
+			<string>ABQ</string>
+			<string>PVU</string>
+			<string>FSD</string>
+		</array>
 	</dict>
 	<dict>
 		<key>ID</key>
-		<string>SAN9</string>
+		<string>PVU</string>
 		<key>Name</key>
 		<string>Provo</string>
 		<key>Latitude</key>
-		<integer>0</integer>
+		<real>40.22</real>
 		<key>Longitude</key>
-		<integer>0</integer>
+		<real>-111.72</real>
 		<key>Radius</key>
 		<integer>10</integer>
 		<key>Puzzles</key>
@@ -329,67 +420,132 @@
 				<key>Difficulty</key>
 				<integer>0</integer>
 				<key>Target</key>
+				<integer>6</integer>
+			</dict>
+			<dict>
+				<key>Difficulty</key>
 				<integer>0</integer>
+				<key>Target</key>
+				<integer>30</integer>
+			</dict>
+			<dict>
+				<key>Difficulty</key>
+				<integer>0</integer>
+				<key>Target</key>
+				<integer>6</integer>
+			</dict>
+			<dict>
+				<key>Difficulty</key>
+				<integer>0</integer>
+				<key>Target</key>
+				<integer>45</integer>
 			</dict>
 		</array>
 		<key>Connections</key>
-		<array/>
+		<array>
+			<string>ASE</string>
+			<string>LAS</string>
+			<string>BZN</string>
+		</array>
 	</dict>
 	<dict>
 		<key>ID</key>
-		<string>SAN10</string>
+		<string>BZN</string>
 		<key>Name</key>
 		<string>Bozeman</string>
 		<key>Latitude</key>
-		<integer>0</integer>
+		<real>45.78</real>
 		<key>Longitude</key>
-		<integer>0</integer>
+		<real>-111.15</real>
 		<key>Radius</key>
 		<integer>10</integer>
 		<key>Puzzles</key>
 		<array>
 			<dict>
 				<key>Difficulty</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>Target</key>
-				<integer>0</integer>
+				<integer>25</integer>
+			</dict>
+			<dict>
+				<key>Difficulty</key>
+				<integer>1</integer>
+				<key>Target</key>
+				<integer>105</integer>
+			</dict>
+			<dict>
+				<key>Difficulty</key>
+				<integer>1</integer>
+				<key>Target</key>
+				<integer>25</integer>
+			</dict>
+			<dict>
+				<key>Difficulty</key>
+				<integer>1</integer>
+				<key>Target</key>
+				<integer>150</integer>
 			</dict>
 		</array>
 		<key>Connections</key>
-		<array/>
+		<array>
+			<string>PVU</string>
+			<string>PDX</string>
+		</array>
 	</dict>
 	<dict>
 		<key>ID</key>
-		<string>SAN11</string>
+		<string>DFW</string>
 		<key>Name</key>
 		<string>Dallas</string>
 		<key>Latitude</key>
-		<integer>0</integer>
+		<real>32.9</real>
 		<key>Longitude</key>
-		<integer>0</integer>
+		<real>-97.03</real>
 		<key>Radius</key>
 		<integer>10</integer>
 		<key>Puzzles</key>
 		<array>
 			<dict>
 				<key>Difficulty</key>
-				<integer>0</integer>
+				<integer>2</integer>
 				<key>Target</key>
-				<integer>0</integer>
+				<integer>45</integer>
+			</dict>
+			<dict>
+				<key>Difficulty</key>
+				<integer>2</integer>
+				<key>Target</key>
+				<integer>210</integer>
+			</dict>
+			<dict>
+				<key>Difficulty</key>
+				<integer>2</integer>
+				<key>Target</key>
+				<integer>45</integer>
+			</dict>
+			<dict>
+				<key>Difficulty</key>
+				<integer>2</integer>
+				<key>Target</key>
+				<integer>270</integer>
 			</dict>
 		</array>
 		<key>Connections</key>
-		<array/>
+		<array>
+			<string>ABQ</string>
+			<string>TUL</string>
+			<string>IAH</string>
+		</array>
 	</dict>
 	<dict>
 		<key>ID</key>
-		<string>SAN12</string>
+		<string>SAT</string>
 		<key>Name</key>
 		<string>San Antonio</string>
 		<key>Latitude</key>
-		<integer>0</integer>
+		<real>29.53</real>
 		<key>Longitude</key>
-		<integer>0</integer>
+		<real>-98.47</real>
 		<key>Radius</key>
 		<integer>10</integer>
 		<key>Puzzles</key>
@@ -398,67 +554,130 @@
 				<key>Difficulty</key>
 				<integer>0</integer>
 				<key>Target</key>
+				<integer>10</integer>
+			</dict>
+			<dict>
+				<key>Difficulty</key>
 				<integer>0</integer>
+				<key>Target</key>
+				<integer>40</integer>
+			</dict>
+			<dict>
+				<key>Difficulty</key>
+				<integer>0</integer>
+				<key>Target</key>
+				<integer>10</integer>
+			</dict>
+			<dict>
+				<key>Difficulty</key>
+				<integer>0</integer>
+				<key>Target</key>
+				<integer>75</integer>
 			</dict>
 		</array>
 		<key>Connections</key>
-		<array/>
+		<array>
+			<string>IAH</string>
+		</array>
 	</dict>
 	<dict>
 		<key>ID</key>
-		<string>SAN13</string>
+		<string>IAH</string>
 		<key>Name</key>
 		<string>Houston</string>
 		<key>Latitude</key>
-		<integer>0</integer>
+		<real>29.97</real>
 		<key>Longitude</key>
-		<integer>0</integer>
+		<real>-95.34999999999999</real>
 		<key>Radius</key>
 		<integer>10</integer>
 		<key>Puzzles</key>
 		<array>
 			<dict>
 				<key>Difficulty</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>Target</key>
-				<integer>0</integer>
+				<integer>30</integer>
+			</dict>
+			<dict>
+				<key>Difficulty</key>
+				<integer>1</integer>
+				<key>Target</key>
+				<integer>120</integer>
+			</dict>
+			<dict>
+				<key>Difficulty</key>
+				<integer>1</integer>
+				<key>Target</key>
+				<integer>30</integer>
+			</dict>
+			<dict>
+				<key>Difficulty</key>
+				<integer>1</integer>
+				<key>Target</key>
+				<integer>180</integer>
 			</dict>
 		</array>
 		<key>Connections</key>
-		<array/>
+		<array>
+			<string>DFW</string>
+			<string>SAT</string>
+			<string>NEW</string>
+		</array>
 	</dict>
 	<dict>
 		<key>ID</key>
-		<string>SAN14</string>
+		<string>TUL</string>
 		<key>Name</key>
 		<string>Tulsa</string>
 		<key>Latitude</key>
-		<integer>0</integer>
+		<real>36.2</real>
 		<key>Longitude</key>
-		<integer>0</integer>
+		<real>-95.90000000000001</real>
 		<key>Radius</key>
 		<integer>10</integer>
 		<key>Puzzles</key>
 		<array>
 			<dict>
 				<key>Difficulty</key>
-				<integer>0</integer>
+				<integer>2</integer>
 				<key>Target</key>
-				<integer>0</integer>
+				<integer>75</integer>
+			</dict>
+			<dict>
+				<key>Difficulty</key>
+				<integer>2</integer>
+				<key>Target</key>
+				<integer>300</integer>
+			</dict>
+			<dict>
+				<key>Difficulty</key>
+				<integer>2</integer>
+				<key>Target</key>
+				<integer>75</integer>
+			</dict>
+			<dict>
+				<key>Difficulty</key>
+				<integer>2</integer>
+				<key>Target</key>
+				<integer>450</integer>
 			</dict>
 		</array>
 		<key>Connections</key>
-		<array/>
+		<array>
+			<string>DFW</string>
+			<string>MKC</string>
+		</array>
 	</dict>
 	<dict>
 		<key>ID</key>
-		<string>SAN15</string>
+		<string>MKC</string>
 		<key>Name</key>
 		<string>Kansas City</string>
 		<key>Latitude</key>
-		<integer>0</integer>
+		<real>39.12</real>
 		<key>Longitude</key>
-		<integer>0</integer>
+		<real>-94.59999999999999</real>
 		<key>Radius</key>
 		<integer>10</integer>
 		<key>Puzzles</key>
@@ -467,67 +686,132 @@
 				<key>Difficulty</key>
 				<integer>0</integer>
 				<key>Target</key>
+				<integer>6</integer>
+			</dict>
+			<dict>
+				<key>Difficulty</key>
 				<integer>0</integer>
+				<key>Target</key>
+				<integer>30</integer>
+			</dict>
+			<dict>
+				<key>Difficulty</key>
+				<integer>0</integer>
+				<key>Target</key>
+				<integer>6</integer>
+			</dict>
+			<dict>
+				<key>Difficulty</key>
+				<integer>0</integer>
+				<key>Target</key>
+				<integer>45</integer>
 			</dict>
 		</array>
 		<key>Connections</key>
-		<array/>
+		<array>
+			<string>TUL</string>
+			<string>OMA</string>
+			<string>STL</string>
+		</array>
 	</dict>
 	<dict>
 		<key>ID</key>
-		<string>SAN16</string>
+		<string>OMA</string>
 		<key>Name</key>
 		<string>Omaha</string>
 		<key>Latitude</key>
-		<integer>0</integer>
+		<real>41.3</real>
 		<key>Longitude</key>
-		<integer>0</integer>
+		<real>-95.90000000000001</real>
 		<key>Radius</key>
 		<integer>10</integer>
 		<key>Puzzles</key>
 		<array>
 			<dict>
 				<key>Difficulty</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>Target</key>
-				<integer>0</integer>
+				<integer>20</integer>
+			</dict>
+			<dict>
+				<key>Difficulty</key>
+				<integer>1</integer>
+				<key>Target</key>
+				<integer>90</integer>
+			</dict>
+			<dict>
+				<key>Difficulty</key>
+				<integer>1</integer>
+				<key>Target</key>
+				<integer>20</integer>
+			</dict>
+			<dict>
+				<key>Difficulty</key>
+				<integer>1</integer>
+				<key>Target</key>
+				<integer>120</integer>
 			</dict>
 		</array>
 		<key>Connections</key>
-		<array/>
+		<array>
+			<string>FSD</string>
+			<string>MKC</string>
+		</array>
 	</dict>
 	<dict>
 		<key>ID</key>
-		<string>SAN17</string>
+		<string>FSD</string>
 		<key>Name</key>
 		<string>Sioux Falls</string>
 		<key>Latitude</key>
-		<integer>0</integer>
+		<real>43.58</real>
 		<key>Longitude</key>
-		<integer>0</integer>
+		<real>-96.73</real>
 		<key>Radius</key>
 		<integer>10</integer>
 		<key>Puzzles</key>
 		<array>
 			<dict>
 				<key>Difficulty</key>
-				<integer>0</integer>
+				<integer>2</integer>
 				<key>Target</key>
-				<integer>0</integer>
+				<integer>55</integer>
+			</dict>
+			<dict>
+				<key>Difficulty</key>
+				<integer>2</integer>
+				<key>Target</key>
+				<integer>240</integer>
+			</dict>
+			<dict>
+				<key>Difficulty</key>
+				<integer>2</integer>
+				<key>Target</key>
+				<integer>55</integer>
+			</dict>
+			<dict>
+				<key>Difficulty</key>
+				<integer>2</integer>
+				<key>Target</key>
+				<integer>330</integer>
 			</dict>
 		</array>
 		<key>Connections</key>
-		<array/>
+		<array>
+			<string>ASE</string>
+			<string>OMA</string>
+			<string>MSP</string>
+		</array>
 	</dict>
 	<dict>
 		<key>ID</key>
-		<string>SAN18</string>
+		<string>MSP</string>
 		<key>Name</key>
 		<string>Minneapolis</string>
 		<key>Latitude</key>
-		<integer>0</integer>
+		<real>44.88</real>
 		<key>Longitude</key>
-		<integer>0</integer>
+		<real>-93.22</real>
 		<key>Radius</key>
 		<integer>10</integer>
 		<key>Puzzles</key>
@@ -536,67 +820,131 @@
 				<key>Difficulty</key>
 				<integer>0</integer>
 				<key>Target</key>
+				<integer>8</integer>
+			</dict>
+			<dict>
+				<key>Difficulty</key>
 				<integer>0</integer>
+				<key>Target</key>
+				<integer>35</integer>
+			</dict>
+			<dict>
+				<key>Difficulty</key>
+				<integer>0</integer>
+				<key>Target</key>
+				<integer>8</integer>
+			</dict>
+			<dict>
+				<key>Difficulty</key>
+				<integer>0</integer>
+				<key>Target</key>
+				<integer>60</integer>
 			</dict>
 		</array>
 		<key>Connections</key>
-		<array/>
+		<array>
+			<string>FSD</string>
+		</array>
 	</dict>
 	<dict>
 		<key>ID</key>
-		<string>SAN19</string>
+		<string>STL</string>
 		<key>Name</key>
 		<string>St Louis</string>
 		<key>Latitude</key>
-		<integer>0</integer>
+		<real>38.75</real>
 		<key>Longitude</key>
-		<integer>0</integer>
+		<real>-90.37</real>
 		<key>Radius</key>
 		<integer>10</integer>
 		<key>Puzzles</key>
 		<array>
 			<dict>
 				<key>Difficulty</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>Target</key>
-				<integer>0</integer>
+				<integer>25</integer>
+			</dict>
+			<dict>
+				<key>Difficulty</key>
+				<integer>1</integer>
+				<key>Target</key>
+				<integer>105</integer>
+			</dict>
+			<dict>
+				<key>Difficulty</key>
+				<integer>1</integer>
+				<key>Target</key>
+				<integer>25</integer>
+			</dict>
+			<dict>
+				<key>Difficulty</key>
+				<integer>1</integer>
+				<key>Target</key>
+				<integer>150</integer>
 			</dict>
 		</array>
 		<key>Connections</key>
-		<array/>
+		<array>
+			<string>MKC</string>
+			<string>MEM</string>
+			<string>CHI</string>
+		</array>
 	</dict>
 	<dict>
 		<key>ID</key>
-		<string>SAN20</string>
+		<string>NEW</string>
 		<key>Name</key>
 		<string>New Orleans</string>
 		<key>Latitude</key>
-		<integer>0</integer>
+		<real>30.03</real>
 		<key>Longitude</key>
-		<integer>0</integer>
+		<real>-90.03</real>
 		<key>Radius</key>
 		<integer>10</integer>
 		<key>Puzzles</key>
 		<array>
 			<dict>
 				<key>Difficulty</key>
-				<integer>0</integer>
+				<integer>2</integer>
 				<key>Target</key>
-				<integer>0</integer>
+				<integer>65</integer>
+			</dict>
+			<dict>
+				<key>Difficulty</key>
+				<integer>2</integer>
+				<key>Target</key>
+				<integer>270</integer>
+			</dict>
+			<dict>
+				<key>Difficulty</key>
+				<integer>2</integer>
+				<key>Target</key>
+				<integer>65</integer>
+			</dict>
+			<dict>
+				<key>Difficulty</key>
+				<integer>2</integer>
+				<key>Target</key>
+				<integer>390</integer>
 			</dict>
 		</array>
 		<key>Connections</key>
-		<array/>
+		<array>
+			<string>IAH</string>
+			<string>JAX</string>
+			<string>MEM</string>
+		</array>
 	</dict>
 	<dict>
 		<key>ID</key>
-		<string>SAN21</string>
+		<string>MEM</string>
 		<key>Name</key>
 		<string>Memphis</string>
 		<key>Latitude</key>
-		<integer>0</integer>
+		<real>35.05</real>
 		<key>Longitude</key>
-		<integer>0</integer>
+		<integer>-90</integer>
 		<key>Radius</key>
 		<integer>10</integer>
 		<key>Puzzles</key>
@@ -605,67 +953,133 @@
 				<key>Difficulty</key>
 				<integer>0</integer>
 				<key>Target</key>
+				<integer>4</integer>
+			</dict>
+			<dict>
+				<key>Difficulty</key>
 				<integer>0</integer>
+				<key>Target</key>
+				<integer>25</integer>
+			</dict>
+			<dict>
+				<key>Difficulty</key>
+				<integer>0</integer>
+				<key>Target</key>
+				<integer>4</integer>
+			</dict>
+			<dict>
+				<key>Difficulty</key>
+				<integer>0</integer>
+				<key>Target</key>
+				<integer>30</integer>
 			</dict>
 		</array>
 		<key>Connections</key>
-		<array/>
+		<array>
+			<string>NEW</string>
+			<string>STL</string>
+			<string>LOU</string>
+		</array>
 	</dict>
 	<dict>
 		<key>ID</key>
-		<string>SAN22</string>
+		<string>LOU</string>
 		<key>Name</key>
 		<string>Louisville</string>
 		<key>Latitude</key>
-		<integer>0</integer>
+		<real>38.23</real>
 		<key>Longitude</key>
-		<integer>0</integer>
+		<real>-85.67</real>
 		<key>Radius</key>
 		<integer>10</integer>
 		<key>Puzzles</key>
 		<array>
 			<dict>
 				<key>Difficulty</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>Target</key>
-				<integer>0</integer>
+				<integer>15</integer>
+			</dict>
+			<dict>
+				<key>Difficulty</key>
+				<integer>1</integer>
+				<key>Target</key>
+				<integer>75</integer>
+			</dict>
+			<dict>
+				<key>Difficulty</key>
+				<integer>1</integer>
+				<key>Target</key>
+				<integer>15</integer>
+			</dict>
+			<dict>
+				<key>Difficulty</key>
+				<integer>1</integer>
+				<key>Target</key>
+				<integer>90</integer>
 			</dict>
 		</array>
 		<key>Connections</key>
-		<array/>
+		<array>
+			<string>CLT</string>
+			<string>CVG</string>
+			<string>MEM</string>
+		</array>
 	</dict>
 	<dict>
 		<key>ID</key>
-		<string>SAN23</string>
+		<string>CHI</string>
 		<key>Name</key>
 		<string>Chicago</string>
 		<key>Latitude</key>
-		<integer>0</integer>
+		<real>41.9</real>
 		<key>Longitude</key>
-		<integer>0</integer>
+		<real>-87.65000000000001</real>
 		<key>Radius</key>
 		<integer>10</integer>
 		<key>Puzzles</key>
 		<array>
 			<dict>
 				<key>Difficulty</key>
-				<integer>0</integer>
+				<integer>2</integer>
 				<key>Target</key>
-				<integer>0</integer>
+				<integer>45</integer>
+			</dict>
+			<dict>
+				<key>Difficulty</key>
+				<integer>2</integer>
+				<key>Target</key>
+				<integer>210</integer>
+			</dict>
+			<dict>
+				<key>Difficulty</key>
+				<integer>2</integer>
+				<key>Target</key>
+				<integer>45</integer>
+			</dict>
+			<dict>
+				<key>Difficulty</key>
+				<integer>2</integer>
+				<key>Target</key>
+				<integer>270</integer>
 			</dict>
 		</array>
 		<key>Connections</key>
-		<array/>
+		<array>
+			<string>STL</string>
+			<string>MKE</string>
+			<string>DET</string>
+		</array>
 	</dict>
 	<dict>
 		<key>ID</key>
-		<string>SAN24</string>
+		<string>MKE</string>
 		<key>Name</key>
 		<string>Milwaukee</string>
 		<key>Latitude</key>
-		<integer>0</integer>
+		<real>42.95</real>
 		<key>Longitude</key>
-		<integer>0</integer>
+		<real>-87.90000000000001</real>
 		<key>Radius</key>
 		<integer>10</integer>
 		<key>Puzzles</key>
@@ -674,67 +1088,129 @@
 				<key>Difficulty</key>
 				<integer>0</integer>
 				<key>Target</key>
+				<integer>10</integer>
+			</dict>
+			<dict>
+				<key>Difficulty</key>
 				<integer>0</integer>
+				<key>Target</key>
+				<integer>40</integer>
+			</dict>
+			<dict>
+				<key>Difficulty</key>
+				<integer>0</integer>
+				<key>Target</key>
+				<integer>10</integer>
+			</dict>
+			<dict>
+				<key>Difficulty</key>
+				<integer>0</integer>
+				<key>Target</key>
+				<integer>75</integer>
 			</dict>
 		</array>
 		<key>Connections</key>
-		<array/>
+		<array>
+			<string>CHI</string>
+		</array>
 	</dict>
 	<dict>
 		<key>ID</key>
-		<string>SAN25</string>
+		<string>DET</string>
 		<key>Name</key>
 		<string>Detroit</string>
 		<key>Latitude</key>
-		<integer>0</integer>
+		<real>42.42</real>
 		<key>Longitude</key>
-		<integer>0</integer>
+		<real>-83.02</real>
 		<key>Radius</key>
 		<integer>10</integer>
 		<key>Puzzles</key>
 		<array>
 			<dict>
 				<key>Difficulty</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>Target</key>
-				<integer>0</integer>
+				<integer>30</integer>
+			</dict>
+			<dict>
+				<key>Difficulty</key>
+				<integer>1</integer>
+				<key>Target</key>
+				<integer>120</integer>
+			</dict>
+			<dict>
+				<key>Difficulty</key>
+				<integer>1</integer>
+				<key>Target</key>
+				<integer>30</integer>
+			</dict>
+			<dict>
+				<key>Difficulty</key>
+				<integer>1</integer>
+				<key>Target</key>
+				<integer>180</integer>
 			</dict>
 		</array>
 		<key>Connections</key>
-		<array/>
+		<array>
+			<string>CHI</string>
+			<string>CLE</string>
+		</array>
 	</dict>
 	<dict>
 		<key>ID</key>
-		<string>SAN26</string>
+		<string>CVG</string>
 		<key>Name</key>
 		<string>Cincinnati</string>
 		<key>Latitude</key>
-		<integer>0</integer>
+		<real>39.05</real>
 		<key>Longitude</key>
-		<integer>0</integer>
+		<real>-84.67</real>
 		<key>Radius</key>
 		<integer>10</integer>
 		<key>Puzzles</key>
 		<array>
 			<dict>
 				<key>Difficulty</key>
-				<integer>0</integer>
+				<integer>2</integer>
 				<key>Target</key>
-				<integer>0</integer>
+				<integer>75</integer>
+			</dict>
+			<dict>
+				<key>Difficulty</key>
+				<integer>2</integer>
+				<key>Target</key>
+				<integer>300</integer>
+			</dict>
+			<dict>
+				<key>Difficulty</key>
+				<integer>2</integer>
+				<key>Target</key>
+				<integer>75</integer>
+			</dict>
+			<dict>
+				<key>Difficulty</key>
+				<integer>2</integer>
+				<key>Target</key>
+				<integer>450</integer>
 			</dict>
 		</array>
 		<key>Connections</key>
-		<array/>
+		<array>
+			<string>LOU</string>
+			<string>CLE</string>
+		</array>
 	</dict>
 	<dict>
 		<key>ID</key>
-		<string>SAN27</string>
+		<string>CLE</string>
 		<key>Name</key>
 		<string>Cleveland</string>
 		<key>Latitude</key>
-		<integer>0</integer>
+		<real>41.42</real>
 		<key>Longitude</key>
-		<integer>0</integer>
+		<real>-81.87</real>
 		<key>Radius</key>
 		<integer>10</integer>
 		<key>Puzzles</key>
@@ -743,67 +1219,131 @@
 				<key>Difficulty</key>
 				<integer>0</integer>
 				<key>Target</key>
+				<integer>6</integer>
+			</dict>
+			<dict>
+				<key>Difficulty</key>
 				<integer>0</integer>
+				<key>Target</key>
+				<integer>30</integer>
+			</dict>
+			<dict>
+				<key>Difficulty</key>
+				<integer>0</integer>
+				<key>Target</key>
+				<integer>6</integer>
+			</dict>
+			<dict>
+				<key>Difficulty</key>
+				<integer>0</integer>
+				<key>Target</key>
+				<integer>45</integer>
 			</dict>
 		</array>
 		<key>Connections</key>
-		<array/>
+		<array>
+			<string>DET</string>
+			<string>CVG</string>
+			<string>PHL</string>
+		</array>
 	</dict>
 	<dict>
 		<key>ID</key>
-		<string>SAN28</string>
+		<string>NYC</string>
 		<key>Name</key>
 		<string>New York</string>
 		<key>Latitude</key>
-		<integer>0</integer>
+		<real>40.77</real>
 		<key>Longitude</key>
-		<integer>0</integer>
+		<real>-73.98</real>
 		<key>Radius</key>
 		<integer>10</integer>
 		<key>Puzzles</key>
 		<array>
 			<dict>
 				<key>Difficulty</key>
-				<integer>0</integer>
+				<integer>2</integer>
 				<key>Target</key>
-				<integer>0</integer>
+				<integer>45</integer>
+			</dict>
+			<dict>
+				<key>Difficulty</key>
+				<integer>2</integer>
+				<key>Target</key>
+				<integer>210</integer>
+			</dict>
+			<dict>
+				<key>Difficulty</key>
+				<integer>2</integer>
+				<key>Target</key>
+				<integer>45</integer>
+			</dict>
+			<dict>
+				<key>Difficulty</key>
+				<integer>2</integer>
+				<key>Target</key>
+				<integer>270</integer>
 			</dict>
 		</array>
 		<key>Connections</key>
-		<array/>
+		<array>
+			<string>PHL</string>
+		</array>
 	</dict>
 	<dict>
 		<key>ID</key>
-		<string>SAN29</string>
+		<string>PHL</string>
 		<key>Name</key>
 		<string>Philidelphia</string>
 		<key>Latitude</key>
-		<integer>0</integer>
+		<real>39.88</real>
 		<key>Longitude</key>
-		<integer>0</integer>
+		<real>-75.25</real>
 		<key>Radius</key>
 		<integer>10</integer>
 		<key>Puzzles</key>
 		<array>
 			<dict>
 				<key>Difficulty</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>Target</key>
-				<integer>0</integer>
+				<integer>20</integer>
+			</dict>
+			<dict>
+				<key>Difficulty</key>
+				<integer>1</integer>
+				<key>Target</key>
+				<integer>90</integer>
+			</dict>
+			<dict>
+				<key>Difficulty</key>
+				<integer>1</integer>
+				<key>Target</key>
+				<integer>20</integer>
+			</dict>
+			<dict>
+				<key>Difficulty</key>
+				<integer>1</integer>
+				<key>Target</key>
+				<integer>120</integer>
 			</dict>
 		</array>
 		<key>Connections</key>
-		<array/>
+		<array>
+			<string>CLE</string>
+			<string>ORF</string>
+			<string>NYC</string>
+		</array>
 	</dict>
 	<dict>
 		<key>ID</key>
-		<string>SAN30</string>
+		<string>ORF</string>
 		<key>Name</key>
-		<string>Virginia Beach</string>
+		<string>Norfolk</string>
 		<key>Latitude</key>
-		<integer>0</integer>
+		<real>36.9</real>
 		<key>Longitude</key>
-		<integer>0</integer>
+		<real>-76.2</real>
 		<key>Radius</key>
 		<integer>10</integer>
 		<key>Puzzles</key>
@@ -812,44 +1352,87 @@
 				<key>Difficulty</key>
 				<integer>0</integer>
 				<key>Target</key>
+				<integer>8</integer>
+			</dict>
+			<dict>
+				<key>Difficulty</key>
 				<integer>0</integer>
+				<key>Target</key>
+				<integer>35</integer>
+			</dict>
+			<dict>
+				<key>Difficulty</key>
+				<integer>0</integer>
+				<key>Target</key>
+				<integer>8</integer>
+			</dict>
+			<dict>
+				<key>Difficulty</key>
+				<integer>0</integer>
+				<key>Target</key>
+				<integer>60</integer>
 			</dict>
 		</array>
 		<key>Connections</key>
-		<array/>
+		<array>
+			<string>CLT</string>
+			<string>PHL</string>
+		</array>
 	</dict>
 	<dict>
 		<key>ID</key>
-		<string>SAN31</string>
+		<string>CLT</string>
 		<key>Name</key>
 		<string>Charlotte</string>
 		<key>Latitude</key>
-		<integer>0</integer>
+		<real>35.22</real>
 		<key>Longitude</key>
-		<integer>0</integer>
+		<real>-80.93000000000001</real>
 		<key>Radius</key>
 		<integer>10</integer>
 		<key>Puzzles</key>
 		<array>
 			<dict>
 				<key>Difficulty</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>Target</key>
-				<integer>0</integer>
+				<integer>25</integer>
+			</dict>
+			<dict>
+				<key>Difficulty</key>
+				<integer>1</integer>
+				<key>Target</key>
+				<integer>105</integer>
+			</dict>
+			<dict>
+				<key>Difficulty</key>
+				<integer>1</integer>
+				<key>Target</key>
+				<integer>25</integer>
+			</dict>
+			<dict>
+				<key>Difficulty</key>
+				<integer>1</integer>
+				<key>Target</key>
+				<integer>150</integer>
 			</dict>
 		</array>
 		<key>Connections</key>
-		<array/>
+		<array>
+			<string>JAX</string>
+			<string>ORF</string>
+			<string>LOU</string>
+		</array>
 	</dict>
 	<dict>
 		<key>ID</key>
-		<string>SAN32</string>
+		<string>JAX</string>
 		<key>Name</key>
 		<string>Jacksonville</string>
 		<key>Latitude</key>
-		<integer>0</integer>
+		<real>30.5</real>
 		<key>Longitude</key>
-		<integer>0</integer>
+		<real>-81.7</real>
 		<key>Radius</key>
 		<integer>10</integer>
 		<key>Puzzles</key>
@@ -858,80 +1441,162 @@
 				<key>Difficulty</key>
 				<integer>0</integer>
 				<key>Target</key>
+				<integer>4</integer>
+			</dict>
+			<dict>
+				<key>Difficulty</key>
 				<integer>0</integer>
+				<key>Target</key>
+				<integer>25</integer>
+			</dict>
+			<dict>
+				<key>Difficulty</key>
+				<integer>0</integer>
+				<key>Target</key>
+				<integer>4</integer>
+			</dict>
+			<dict>
+				<key>Difficulty</key>
+				<integer>0</integer>
+				<key>Target</key>
+				<integer>30</integer>
 			</dict>
 		</array>
 		<key>Connections</key>
-		<array/>
+		<array>
+			<string>NEW</string>
+			<string>MIA</string>
+			<string>CLT</string>
+		</array>
 	</dict>
 	<dict>
 		<key>ID</key>
-		<string>SAN33</string>
+		<string>MIA</string>
 		<key>Name</key>
 		<string>Miami</string>
 		<key>Latitude</key>
-		<integer>0</integer>
+		<real>25.82</real>
 		<key>Longitude</key>
-		<integer>0</integer>
+		<real>-80.28</real>
 		<key>Radius</key>
 		<integer>10</integer>
 		<key>Puzzles</key>
 		<array>
 			<dict>
 				<key>Difficulty</key>
-				<integer>0</integer>
+				<integer>2</integer>
 				<key>Target</key>
-				<integer>0</integer>
+				<integer>65</integer>
+			</dict>
+			<dict>
+				<key>Difficulty</key>
+				<integer>2</integer>
+				<key>Target</key>
+				<integer>270</integer>
+			</dict>
+			<dict>
+				<key>Difficulty</key>
+				<integer>2</integer>
+				<key>Target</key>
+				<integer>65</integer>
+			</dict>
+			<dict>
+				<key>Difficulty</key>
+				<integer>2</integer>
+				<key>Target</key>
+				<integer>390</integer>
 			</dict>
 		</array>
 		<key>Connections</key>
-		<array/>
+		<array>
+			<string>JAX</string>
+		</array>
 	</dict>
 	<dict>
 		<key>ID</key>
-		<string>SAN34</string>
+		<string>ANC</string>
 		<key>Name</key>
 		<string>Anchorage</string>
 		<key>Latitude</key>
-		<integer>0</integer>
+		<real>61.17</real>
 		<key>Longitude</key>
-		<integer>0</integer>
+		<real>-150.02</real>
 		<key>Radius</key>
 		<integer>10</integer>
 		<key>Puzzles</key>
 		<array>
 			<dict>
 				<key>Difficulty</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>Target</key>
-				<integer>0</integer>
+				<integer>15</integer>
+			</dict>
+			<dict>
+				<key>Difficulty</key>
+				<integer>1</integer>
+				<key>Target</key>
+				<integer>75</integer>
+			</dict>
+			<dict>
+				<key>Difficulty</key>
+				<integer>1</integer>
+				<key>Target</key>
+				<integer>15</integer>
+			</dict>
+			<dict>
+				<key>Difficulty</key>
+				<integer>1</integer>
+				<key>Target</key>
+				<integer>90</integer>
 			</dict>
 		</array>
 		<key>Connections</key>
-		<array/>
+		<array>
+			<string>SEA</string>
+		</array>
 	</dict>
 	<dict>
 		<key>ID</key>
-		<string>SAN35</string>
+		<string>JHM</string>
 		<key>Name</key>
-		<string>Kauai</string>
+		<string>Maui</string>
 		<key>Latitude</key>
-		<integer>0</integer>
+		<real>20.97</real>
 		<key>Longitude</key>
-		<integer>0</integer>
+		<real>-156.83</real>
 		<key>Radius</key>
 		<integer>10</integer>
 		<key>Puzzles</key>
 		<array>
 			<dict>
 				<key>Difficulty</key>
-				<integer>0</integer>
+				<integer>2</integer>
 				<key>Target</key>
-				<integer>0</integer>
+				<integer>55</integer>
+			</dict>
+			<dict>
+				<key>Difficulty</key>
+				<integer>2</integer>
+				<key>Target</key>
+				<integer>240</integer>
+			</dict>
+			<dict>
+				<key>Difficulty</key>
+				<integer>2</integer>
+				<key>Target</key>
+				<integer>55</integer>
+			</dict>
+			<dict>
+				<key>Difficulty</key>
+				<integer>2</integer>
+				<key>Target</key>
+				<integer>330</integer>
 			</dict>
 		</array>
 		<key>Connections</key>
-		<array/>
+		<array>
+			<string>SFO</string>
+		</array>
 	</dict>
 </array>
 </plist>

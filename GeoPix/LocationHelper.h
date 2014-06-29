@@ -14,5 +14,6 @@
 +(NSArray*)visibleLocations;
 +(NSDictionary*)locationWithId:(NSString*)locationId;
 +(void)unlockConnectionsForLocation:(NSString*)locationId;
++(NSArray*)allLocations;
 
 @end

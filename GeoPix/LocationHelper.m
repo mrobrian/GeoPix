@@ -53,6 +53,11 @@ static NSMutableDictionary *locationHash;
     return visibleLocations;
 }
 
++(NSArray*)allLocations {
+    [LocationHelper loadData];
+    return locations;
+}
+
 +(NSDictionary*)locationWithId:(NSString*)locationId {
     [LocationHelper loadData];
     return [locationHash objectForKey:locationId];
