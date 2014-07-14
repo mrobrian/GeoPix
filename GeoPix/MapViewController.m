@@ -178,7 +178,7 @@
     }
     score = [PuzzleHelper scoreForLocation:locationId withNumber:2];
     if (score > 0) {
-        self.p2Best.text = [NSString stringWithFormat:@"%lu", (long)score];
+        self.p2Best.text = [NSString stringWithFormat:@"%02lu:%02lu", (long)(score / 60), (long)(score % 60)];
     } else {
         self.p2Best.text = @"None";
     }
@@ -190,7 +190,7 @@
     }
     score = [PuzzleHelper scoreForLocation:locationId withNumber:4];
     if (score > 0) {
-        self.p4Best.text = [NSString stringWithFormat:@"%lu", (long)score];
+        self.p4Best.text = [NSString stringWithFormat:@"%02lu:%02lu", (long)(score / 60), (long)(score % 60)];
     } else {
         self.p4Best.text = @"None";
     }
