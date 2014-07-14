@@ -10,7 +10,7 @@
 #import <MapKit/MapKit.h>
 #import "LocationView.h"
 
-@interface MapViewController : UIViewController <MKMapViewDelegate, UITableViewDataSource, UITableViewDelegate>
+@interface MapViewController : UIViewController <MKMapViewDelegate>
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (weak, nonatomic) IBOutlet LocationView *locationView;
@@ -27,12 +27,12 @@
 @property (weak, nonatomic) IBOutlet UIView *p2View;
 @property (weak, nonatomic) IBOutlet UIView *p3View;
 @property (weak, nonatomic) IBOutlet UIView *p4View;
-@property (weak, nonatomic) IBOutlet UITableView *p1Leaderboard;
-@property (weak, nonatomic) IBOutlet UITableView *p2Leaderboard;
-@property (weak, nonatomic) IBOutlet UITableView *p3Leaderboard;
-@property (weak, nonatomic) IBOutlet UITableView *p4Leaderboard;
 @property (weak, nonatomic) IBOutlet UILabel *energy;
 @property (weak, nonatomic) IBOutlet UILabel *nextEnergy;
+@property (weak, nonatomic) IBOutlet UILabel *p1Best;
+@property (weak, nonatomic) IBOutlet UILabel *p2Best;
+@property (weak, nonatomic) IBOutlet UILabel *p3Best;
+@property (weak, nonatomic) IBOutlet UILabel *p4Best;
 
 - (IBAction)hideLocationView:(id)sender;
 - (IBAction)playPuzzle:(id)sender;

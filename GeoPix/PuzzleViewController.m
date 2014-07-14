@@ -273,7 +273,6 @@
             }
             [PuzzleHelper solvedPuzzleForLocation:self.locationId withNumber:puzzleNumber time:elapsedTime moves:moves];
             [LocationHelper unlockConnectionsForLocation:self.locationId];
-            //TODO: report elapsedTime and moves
         }
     }
 }

@@ -169,10 +169,31 @@
                                   withTarget:[[puzzles[2] objectForKey:@"Target"] integerValue]];
     self.p4Medal.image = [PuzzleHelper medalForScore:[PuzzleHelper scoreForLocation:locationId withNumber:4]
                                   withTarget:[[puzzles[3] objectForKey:@"Target"] integerValue]];
-    [self.p1Leaderboard reloadData];
-    [self.p2Leaderboard reloadData];
-    [self.p3Leaderboard reloadData];
-    [self.p4Leaderboard reloadData];
+    NSInteger score;
+    score = [PuzzleHelper scoreForLocation:locationId withNumber:1];
+    if (score > 0) {
+        self.p1Best.text = [NSString stringWithFormat:@"%lu", (long)score];
+    } else {
+        self.p1Best.text = @"None";
+    }
+    score = [PuzzleHelper scoreForLocation:locationId withNumber:2];
+    if (score > 0) {
+        self.p2Best.text = [NSString stringWithFormat:@"%lu", (long)score];
+    } else {
+        self.p2Best.text = @"None";
+    }
+    score = [PuzzleHelper scoreForLocation:locationId withNumber:3];
+    if (score > 0) {
+        self.p3Best.text = [NSString stringWithFormat:@"%lu", (long)score];
+    } else {
+        self.p3Best.text = @"None";
+    }
+    score = [PuzzleHelper scoreForLocation:locationId withNumber:4];
+    if (score > 0) {
+        self.p4Best.text = [NSString stringWithFormat:@"%lu", (long)score];
+    } else {
+        self.p4Best.text = @"None";
+    }
     
     [UIView animateWithDuration:0.3 animations:^{
         self.locationView.alpha = 1.0;
@@ -248,22 +269,6 @@
 
 - (IBAction)goBack:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
-}
-
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if ([PuzzleHelper scoreForLocation:locationId withNumber:tableView.tag % 400] > 0) {
-        tableView.hidden = NO;
-        return 1;
-    }
-    return 0;
-}
-
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    LeaderboardTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"LocationLeaderboardCell"];
-    cell.placeLabel.text = @"1. me";
-    cell.scoreLabel.text = [NSString stringWithFormat:@"%lu", (long)[PuzzleHelper scoreForLocation:locationId withNumber:tableView.tag % 400]];
-    
-    return cell;
 }
 
 @end
