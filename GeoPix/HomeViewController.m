@@ -28,7 +28,7 @@
     backgroundImages = [NSMutableArray arrayWithCapacity:0];
     currentBackgroundImage = 0;
     [self loadBackgroundImage];
-    [GameKitHelper authenticateLocalPlayerWithViewController:self];
+    //[GameKitHelper authenticateLocalPlayerWithViewController:self];
     id difficulty = [[NSUserDefaults standardUserDefaults] objectForKey:DIFFICULTY_KEY];
     if (difficulty == nil) {
         [[NSUserDefaults standardUserDefaults] setInteger:1 forKey:DIFFICULTY_KEY];

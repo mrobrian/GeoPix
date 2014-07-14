@@ -25,7 +25,6 @@
 		FF7A40B3191E927300289B20 /* FlickrAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7A40B1191E927300289B20 /* FlickrAPI.m */; };
 		FF7A40B5191E92DD00289B20 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF7A40B4191E92DD00289B20 /* CoreLocation.framework */; };
 		FF7A40B8191E98BB00289B20 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7A40B7191E98BB00289B20 /* HomeViewController.m */; };
-		FF7A40BA191ED72900289B20 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF7A40B9191ED72900289B20 /* GameKit.framework */; };
 		FF7A40BC191ED73200289B20 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF7A40BB191ED73200289B20 /* iAd.framework */; };
 		FF7A40C1191EE46700289B20 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF7A40C0191EE46700289B20 /* MapKit.framework */; };
 		FF7A40C7191EE90C00289B20 /* GameKitHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7A40C6191EE90C00289B20 /* GameKitHelper.m */; };
@@ -79,7 +78,6 @@
 		FF7A40B4191E92DD00289B20 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		FF7A40B6191E98BB00289B20 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		FF7A40B7191E98BB00289B20 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
-		FF7A40B9191ED72900289B20 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		FF7A40BB191ED73200289B20 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		FF7A40C0191EE46700289B20 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		FF7A40C5191EE90C00289B20 /* GameKitHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameKitHelper.h; sourceTree = "<group>"; };
@@ -111,7 +109,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF7A40BC191ED73200289B20 /* iAd.framework in Frameworks */,
-				FF7A40BA191ED72900289B20 /* GameKit.framework in Frameworks */,
 				FF7A40B5191E92DD00289B20 /* CoreLocation.framework in Frameworks */,
 				FF7A407C191E90B800289B20 /* CoreGraphics.framework in Frameworks */,
 				FF7A40C1191EE46700289B20 /* MapKit.framework in Frameworks */,
@@ -157,7 +154,6 @@
 			children = (
 				FF7A40C0191EE46700289B20 /* MapKit.framework */,
 				FF7A40BB191ED73200289B20 /* iAd.framework */,
-				FF7A40B9191ED72900289B20 /* GameKit.framework */,
 				FF7A40B4191E92DD00289B20 /* CoreLocation.framework */,
 				FF7A4079191E90B800289B20 /* Foundation.framework */,
 				FF7A407B191E90B800289B20 /* CoreGraphics.framework */,
@@ -336,6 +332,9 @@
 					FF7A4075191E90B800289B20 = {
 						DevelopmentTeam = 477J3Z26K8;
 						SystemCapabilities = {
+							com.apple.GameCenter = {
+								enabled = 0;
+							};
 							com.apple.iOS = {
 								enabled = 1;
 							};
@@ -533,10 +532,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GeoPix/GeoPix-Prefix.pch";
 				INFOPLIST_FILE = "GeoPix/GeoPix-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -547,10 +548,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GeoPix/GeoPix-Prefix.pch";
 				INFOPLIST_FILE = "GeoPix/GeoPix-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
